@@ -1,0 +1,114 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    background:#068efe;
+}
+
+#showcase {
+    background-image:url("https://wallpaperaccess.com/full/3581467.jpg");
+    background-size:cover;
+    background-position:center;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding: 0, 20px;
+}
+
+#showcase h1 {
+    font-size:50px;
+    line-height:1.2;
+}
+
+#showcase p {
+    font-size:20px;
+}
+
+#showcase .button {
+    font-size:18px;
+    text-decoration:none;
+    color:white;
+    border:white 1px solid;
+    padding:10px 20px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+#showcase .button:hover {
+    background:black;
+}
+
+
+#button2 {
+    font-size:18px;
+    text-decoration:none;
+    color:black;
+    border:black 1px solid;
+    padding:10px 20px;
+    border-radius:10px;
+}
+
+#button2:hover {
+    background:white;
+}
+
+#a {
+    padding:20px;
+    background: #ef8dfc;
+    color:black;
+    text-align:left;
+}
+
+#b {
+    padding:20px;
+    background: #fe6ee0;
+    color:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+#c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#c div {
+    padding:20px;
+}
+
+#c a {
+    color:rgb(178, 215, 250);
+    font-size:20px;
+    text-decoration:none;
+}
+
+#c a:hover {
+    color:white;
+    text-decoration:underline;
+}
+
+#box1, #box3 {
+    background:#013473;
+    color:white;
+
+}
+
+#box2 {
+    background:#068efe;
+    color:black;
+    font-size:30px;
+    text-align:center;
+
+}
