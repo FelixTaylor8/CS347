@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-       <title>APIR Blog</title>
-    </head>
-    <body>
-        <header id="showcase">
-
-
-        <h1>09/02/21</h1>
-        <h2>Felix Taylor</h2>
-        <a href="#a" class="button">Read</a>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>APIR Blog</title>
+  </head>
+  <body>
+    <header id="showcase">
+      <h1>09/02/21</h1>
+      <h2>Felix Taylor</h2>
+      <a href="#a" class="button">Read</a>
     </header>
     <section id="a">
-        <p>Since I took CS280 last fall, a lot of this is review for me. To refresh my HTML memory, I watched <a href="https://youtu.be/hVdTQWASliE">a tutorial</a> for setting up this site to look relatively nice. It helped me remember how CSS works, and that's useful. It refreshed my memory on using names and IDs so instruct CSS to present different elements in different ways, such as changing font size/color and adding a background image. For example, the header is called "#showcase" and the style sheet adds a background image and ensures it stays stable when the page is resized:</p>
-        <pre><code>#showcase {
+      <p>Since I took CS280 last fall, a lot of this is review for me. To refresh my HTML memory, I watched <a href="https://youtu.be/hVdTQWASliE">a tutorial</a> for setting up this site to look relatively nice. It helped me remember how CSS works, and that's useful. It refreshed my memory on using names and IDs so instruct CSS to present different elements in different ways, such as changing font size/color and adding a background image. For example, the header is called "#showcase" and the style sheet adds a background image and ensures it stays stable when the page is resized:</p>
+      <pre><code>#showcase {
             background-image:url("https://wallpaperaccess.com/full/3581467.jpg");
             background-size:cover;
             background-position:center;
@@ -28,17 +26,15 @@
             text-align:center;
             padding: 0, 20px;
         }</code></pre>
-        <p>If I wanted to interact with each "h1" element within showcase, I would use "#showcase h1" in the CSS declaration.</p>
-        <p>I figured the difference between "id" and "class" was that id could only apply to one element, while class could apply to multiple, and <a href="https://www.geeksforgeeks.org/difference-between-an-id-and-class-in-html/">this page</a> confirmed that.</p>
-        <p>Also, "vh" makes sure the image is the same height relative to that of the device it's viewed on. 100 pixels is always 100 pixels, but 100vh is different depending on how large a screen is.</p>
-        <p>What I'm not yet (and never really was) sure about is the display and flex attributes. Those always seemed confusing and buggy to me, they never looked right. I would just try random ones until I got something that looked okay.</p>
-        <p>Text alignment and padding are straightforward. The code puts it on the center of the page, and puts 20 pixels around it.</p>
-        <p>I wasn't sure what the difference between justify-content and align-items was, but former is for horizontal alignment and the latter is for vertical, according to <a href="https://css-tricks.com/a-quick-way-to-remember-difference-between-justify-content-align-items/">this article</a>.</p>
+      <p>If I wanted to interact with each "h1" element within showcase, I would use "#showcase h1" in the CSS declaration.</p>
+      <p>I figured the difference between "id" and "class" was that id could only apply to one element, while class could apply to multiple, and <a href="https://www.geeksforgeeks.org/difference-between-an-id-and-class-in-html/">this page</a> confirmed that.</p>
+      <p>Also, "vh" makes sure the image is the same height relative to that of the device it's viewed on. 100 pixels is always 100 pixels, but 100vh is different depending on how large a screen is.</p>
+      <p>What I'm not yet (and never really was) sure about is the display and flex attributes. Those always seemed confusing and buggy to me, they never looked right. I would just try random ones until I got something that looked okay.</p>
+      <p>Text alignment and padding are straightforward. The code puts it on the center of the page, and puts 20 pixels around it.</p>
+      <p>I wasn't sure what the difference between justify-content and align-items was, but former is for horizontal alignment and the latter is for vertical, according to <a href="https://css-tricks.com/a-quick-way-to-remember-difference-between-justify-content-align-items/">this article</a>.</p>
     </section>
     <section id="b">
-        <a href="index.html" id="button2">Home</a>
-
+      <a href="index.html" id="button2">Home</a>
     </section>
-
-    </body>
+  </body>
 </html>
