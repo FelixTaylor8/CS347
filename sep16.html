@@ -26,14 +26,20 @@
     <p>It was cute, though I don't think it'll help me remember which is which. I always mix them up.</p>
     <p>I was a little confused why it said that position: absolute; doesn't stack. I looked at other examples, such as on this site, and it looks like they do stack.</p>
     <p>According to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context">this site</a>, stacking is when elements are piled up on top of each other. So what did the sundae site mean when it said they didn't stack, when it looks obvious that they do? I think they might have meant that position; absolute doesn't stack side-by-side, and they just used the wrong term. Odd.</p>
-    <p>I also followed this video tutorial to set up the navbar for my project. There was a lot of stuff shown in the video that I didn't want to use, but this aspect was cool:</p>
+    <p>I also followed <a href="https://www.youtube.com/watch?v=PwWHL3RyQgk">this video</a> tutorial to set up the navbar for my project. There was a lot of stuff shown in the video that I didn't want to use, but this aspect was cool:</p>
     <pre><code>
-        .navlinks li a {
+        ul li a {
             transition: all 0.3s ease 0s;
         }
     </code></pre>
-    <p>This slowed down the transition between the regular link color and the color it changes to when the mouse hovers over it.</p>
-
+    <p>This slowed down the transition between the regular link color and the color it changes to when the mouse hovers over it. "all" indicates it should apply to all transition types (eg changing color), 0.3s is how long the transition should take place, and ease "specifies a transition effect with a slow start, then fast, then end slowly" <a href="https://www.w3schools.com/css/css3_transitions.asp">(source)</a>. I wasn't too sure if the 0s was needed, but removing it slowed the transition down for some reason. Other examples didn't include it for ease.</p>
+    <p>Additionally, the video showed that</p>
+    <pre><code>
+        ul li {
+            display: inline-block;
+        }
+    </code></pre>
+    <p>makes the list elements sit next to each other instead of above/below each other.</p>
     </section>
     <section id="b">
       <a href="index.html" id="button2">Home</a>
