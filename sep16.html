@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>APIR Blog</title>
+  </head>
+  <body>
+    <header id="showcase">
+      <h1>09/16/21</h1>
+      <h2>Felix Taylor</h2>
+      <a href="#a" class="button">Read</a>
+    </header>
+    <section id="a">
+    <p>I did some practice with position elements using <a href="https://www.codeanalogies.com/csssundae/">this webpage</a>. Here are some notes:</p>
+    <ul>
+        <li>position: relative; is used to contain position: absolute;</li>
+        <li>position: relative; is used to shift elements left and right</li>
+        <li>position: fixed; is always on the same position on the screen</li>
+        <li>top, bottom, left, and right affect where on the page the item is located</li>
+        <li>position: absolute; puts items in specific places</li>
+        <li>position: absolute; items do not stack</li>
+        <li>position: absolute; elements move relative to a non-static parent</li>
+    </ul>
+    <p>It was cute, though I don't think it'll help me remember which is which. I always mix them up.</p>
+    <p>I was a little confused why it said that position: absolute; doesn't stack. I looked at other examples, such as on this site, and it looks like they do stack.</p>
+    <p>According to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context">this site</a>, stacking is when elements are piled up on top of each other. So what did the sundae site mean when it said they didn't stack, when it looks obvious that they do? I think they might have meant that position; absolute doesn't stack side-by-side, and they just used the wrong term. Odd.</p>
+    <p>I also followed this video tutorial to set up the navbar for my project. There was a lot of stuff shown in the video that I didn't want to use, but this aspect was cool:</p>
+    <pre><code>
+        .navlinks li a {
+            transition: all 0.3s ease 0s;
+        }
+    </code></pre>
+    <p>This slowed down the transition between the regular link color and the color it changes to when the mouse hovers over it.</p>
+
+    </section>
+    <section id="b">
+      <a href="index.html" id="button2">Home</a>
+    </section>
+  </body>
+</html>
