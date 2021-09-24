@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>APIR Blog</title>
+  </head>
+  <body>
+    <header id="showcase">
+      <h1>09/23/21</h1>
+      <h2>Felix Taylor</h2>
+      <a href="#a" class="button">Read</a>
+    </header>
+    <section id="a">
+        <p>Still having issues figuring out flex and position stuff (as usual), so I read an <a href="https://www.freecodecamp.org/news/css-positioning-and-flexbox-explained/">article</a> explaining the two. Here are some notes from that:</p>
+        <ul>
+            <li>Static is the default positioning, and it orders things in accordance to what occurs first in the HTML file.</li>
+            <li>Relative positioning doesn't change anything until it's shifted up, down, left, or right.</li>
+            <li>Absolute positioning causes all other elements to ignore it. Top, left, right, bottom, will shift it relative to the parent, but the parent also has to be absolute. I thought the parent had to be relative. That's what <a href="https://css-tricks.com/almanac/properties/p/position/">this site</a> says. Probably a mistake.</li>
+            <li>Fixed ignores the parent element. It stays in the same spot on the screen, regardless of scrolling.</li>
+            <li>Sticky moves but stops once it reaches the top or bottom of the screen.</li>
+        </ul>
+        <p>The rest of the article as stuff I pretty much already understand, nothing to note there.</p>
+        <p>I think I sort of forgot that span existed, since I don't remember using it in projects. I'd just default to div instead. According to <a href="https://blog.hubspot.com/website/span-vs-div">this</a> page, they are "both generic HTML elements that group together related parts of a web page", and it describes div as being a block element and span being an in-line element. I think I get the difference. Span just uses text instead of having a box with a height/width. They're just used to apply style to specific text, pretty much. I'm not sure when I'd want to use them.</p>
+        <p>I wanted to look into creating an animation for the project site. My idea was to make the images slowly fade in. I tried doing it to the background image on the splash page:</p>
+        <pre><code>
+            .showcase {
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+                animation: fade-in 2s
+            }
+            
+            @keyframes fade-in {
+                from {
+                    background-image: none;
+                } 
+                to {
+                    background-image: url("/images/splash.jpg");
+                }
+            }
+        </code></pre>
+    <p>based on <a href="https://www.youtube.com/watch?v=UInN6O_nMKs">this video</a> tutorial. However, this just made the dinosaur appear and disappear randomly. Not what I wanted. I don't know how to apply an opacity to just the image, since it uses background-image in the CSS file, not an img element, and I don't want to make the whole header fade in and out. Guess I'll find something else to animate.</p>
+    <p>Finally, I wanted to see why dashes are used instead of camelcase for CSS, so I read this <a href="https://www.geeksforgeeks.org/why-are-dashes-preferred-for-css-selectors-html-attributes/">article</a>, and it just seemed to find five different ways of saying "it's more readable." Fair enough. I'm so used to camelcase though, oh well.</p>
+
+ 
+    </section>
+    <section id="b">
+      <a href="index.html" id="button2">Home</a>
+    </section>
+  </body>
+</html>
