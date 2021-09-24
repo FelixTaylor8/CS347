@@ -1,0 +1,118 @@
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #b5d7fc;
+    margin: 0;
+}
+
+.navlinks {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navlinks li {
+    display: inline-block;
+    padding: 0px 20px;
+    font-size: 25px;
+}
+
+.navlinks li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color:rgb(65, 72, 168);
+}
+
+.navlinks li a:hover {
+    color: rgb(0, 158, 185);
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.showcase {
+    background-image: url("/images/splash.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+}
+
+nav {
+    background-color:rgb(224, 224, 224);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.information {
+  position: absolute;
+  top: 40vh;
+  left: 7vh;
+  max-width: 500px;
+}
+
+.showcase h1, .showcase h2 {
+    font-weight: bold;
+    color:rgb(69, 92, 128);
+    background-color:#b5d7fc;
+}
+
+
+.information a {
+    color:rgb(76, 105, 151);
+  }
+
+  footer div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      background-color:rgb(224, 224, 224);
+      color:rgb(65, 72, 168);
+  }
+
+  .contentBox {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      color:rgb(49, 79, 126);
+  }
+
+  .gray {
+     background-color:rgb(224, 224, 224);
+     padding-bottom: 15px;
+  }
+
+  .gray h1 {
+      margin: 0;
+  }
+
+  .contain {
+    position: relative;
+    margin: 0 auto;
+    max-width: 75%;
+  }
+
+  .button {
+	text-decoration: none;
+	color: white;
+	border: white 1px solid;
+	padding: 10px 20px;
+	border-radius: 10px;
+	margin-top: 20px;
+    color:rgb(49, 79, 126)
+  }
