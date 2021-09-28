@@ -1,108 +1,259 @@
 <!doctype html>
-
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Dinos</title>
-  <meta name="author" content="Felix Taylor">
-  <link rel="stylesheet" href="css/dinostyle.css">
-  <link rel="shortcut icon" type="image/png" href="images/icon.png">
-
-
-</head>
-
-<body>
-
-  <header class="showcase">
-    <nav>
-       <ul class="navlinks">
-         <li><a href="index.html">Home</a></li>
-         <li><a href="entertainment.html">Entertainment</a></li>
-         <li><a href="education.html">Education</a></li>
-         <li><a href="exhibits.html">Exhibits</a></li>
-         <li><a href="fossils.html">Fossils</a></li>
-       </ul>
-    </nav>
-
-    <div class="information">
-      <h1>Famous Fossils</h1>
-    </div>
-  </header>
-
-
-<div>
-
-  <div class="contentBox">
-    <img src="images/fighting.jpg" alt="Fighting dinosaurs fossil. Protoceratops biting a velociprator" width="500">
-    <div>
-      <h2>Fighting Dinosaurs</h2>
-      <table>
-        <tr>
-          <td>Discovered:</td>
-          <td>Mongolia, 1971</td>
-        </tr>
-        <tr>
-          <td>Resides:</td>
-          <td>Central Museum of Mongolia</td>
-        </tr>
-        <tr>
-          <td>Dinosaur(s):</td>
-          <td>Protoceratops</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Velociraptor</td>
-        </tr>
-        <tr>
-          <td>Age:</td>
-          <td>80 million years</td>
-        </tr>
-        <tr>
-          <td>Source:</td>
-          <td><a href="https://en.wikipedia.org/wiki/Fighting_Dinosaurs">Wikipedia</a></td>
-        </tr>
-      </table>
-      <p>Protoceratops bit down on the arm of veliciraptor and never let go!</p>
-    </div>
-  </div>
-
-
-  <div class="contentBox">
-    <div>
-      <h2>Sue</h2>
-      <table>
-        <tr>
-          <td>Discovered:</td>
-          <td>South Dakota, 1990</td>
-        </tr>
-        <tr>
-          <td>Resides:</td>
-          <td>The Field Museum of Natural History (Chicago)</td>
-        </tr>
-        <tr>
-          <td>Dinosaur(s):</td>
-          <td>Tyrannosaurus Rex</td>
-        </tr>
-        <tr>
-          <td>Age:</td>
-          <td>67 million years</td>
-        </tr>
-        <tr>
-          <td>Source:</td>
-          <td><a href="https://en.wikipedia.org/wiki/Sue_(dinosaur)">Wikipedia</a></td>
-        </tr>
-      </table>
-      <p>"One of the largest, most extensive, and best preserved Tyrannosaurus rex specimens ever found."</p>
-    </div>
-    <img src="images/sue.jpg" alt="Sue, the largest t-rex fossil discovered" width="500">
-  </div>
-
-</div>
-
-
-</body>
-
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dino Site - Fossils</title>
+    <meta name="author" content="Felix Taylor">
+    <link rel="stylesheet" href="css/dinostyle.css">
+    <link rel="shortcut icon" type="image/png" href="images/icon.png">
+  </head>
+  <body>
+    <header class="showcase">
+      <nav>
+        <ul class="navlinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="entertainment.html">Entertainment</a></li>
+          <li><a href="species.html">Species</a></li>
+          <li><a href="time.html">Time Periods</a></li>
+          <li><a href="fossils.html">Fossils</a></li>
+        </ul>
+      </nav>
+      <div class="information">
+        <h1>Famous Fossils</h1>
+        <h2>Bones and Casts</h2>
+      </div>
+      <img src="images/rainbow.png" width="175" alt="A rainbow t-rex">
+    </header>
+    <section class="gray" id="fighting">
+      <div class="content-box">
+        <img src="images/fighting.jpg" alt="Fighting dinosaurs fossil. Protoceratops biting a velociprator's arm" width="500">
+        <div>
+          <h2>Fighting Dinosaurs</h2>
+          <table>
+            <tr>
+              <td>Discovered:</td>
+              <td>Mongolia, 1971</td>
+            </tr>
+            <tr>
+              <td>Resides:</td>
+              <td>Central Museum of Mongolia</td>
+            </tr>
+            <tr>
+              <td>Dinosaur(s):</td>
+              <td>Protoceratops</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a href="#eduction.html#veloci">Velociraptor</a></td>
+            </tr>
+            <tr>
+              <td>Age:</td>
+              <td>80 million years (Late <a href="time#cret">Cretaceous</a>)</td>
+            </tr>
+            <tr>
+              <td>Source:</td>
+              <td><a href="https://en.wikipedia.org/wiki/Fighting_Dinosaurs" target="_blank">Wikipedia</a></td>
+            </tr>
+          </table>
+          <p>Protoceratops bit down on the arm of veliciraptor and never let go! This fossil is famous for giving us a glimpse into these animals' behavior.</p>
+          <small><a href="https://commons.wikimedia.org/wiki/File:Velociraptor_and_Protoceratops_-_Fighting_dinosaurs.jpg" target="_blank">Image source</a></small>
+        </div>
+      </div>
+    </section>
+    <section class="blue" id="sue">
+      <div class="content-box">
+        <div>
+          <h2>Sue</h2>
+          <table>
+            <tr>
+              <td>Discovered:</td>
+              <td>South Dakota, 1990</td>
+            </tr>
+            <tr>
+              <td>Resides:</td>
+              <td>The Field Museum of Natural History (Chicago)</td>
+            </tr>
+            <tr>
+              <td>Dinosaur(s):</td>
+              <td><a href="#species.html#trex">Tyrannosaurus</a></td>
+            </tr>
+            <tr>
+              <td>Age:</td>
+              <td>67 million years (Late <a href="time#cret">Cretaceous</a>)</td>
+            </tr>
+            <tr>
+              <td>Source:</td>
+              <td><a href="https://en.wikipedia.org/wiki/Sue_(dinosaur)" target="_blank">Wikipedia</a></td>
+            </tr>
+          </table>
+          <p>Named after the paleontologist who discovered it, Sue is "one of the largest, most extensive, and best preserved Tyrannosaurus rex specimens ever found." Its discovery and subsequent legal battles are detailed in the documentary <a href="entertainment.html#dino13">Dinosaur 13</a>.</p>
+          <small><a href="https://commons.wikimedia.org/wiki/File:FMNH_Tyrannosaurus_rex_Sue.jpg" target="_blank">Image source</a></small>
+        </div>
+        <img src="images/sue.jpg" alt="Sue, the largest t-rex fossil discovered, on display at the Chicago Field Museum" width="500">
+      </div>
+    </section>
+    <section class="gray">
+      <div class="content-box">
+        <img src="images/maximo.jpg" alt="Maximo, a composite of many different Patagotitans, the largest dinosaur species known, on display at the Chicago Field Museum" width="500">
+        <div>
+          <h2>Maximo</h2>
+          <table>
+            <tr>
+              <td>Discovered:</td>
+              <td>Argentina</td>
+            </tr>
+            <tr>
+              <td>Resides:</td>
+              <td>The Field Museum of Natural History (Chicago)</td>
+            </tr>
+            <tr>
+              <td>Dinosaur(s):</td>
+              <td>Patagotitan</td>
+            </tr>
+            <tr>
+              <td>Age:</td>
+              <td>100 million years (<a href="time#cret">Cretaceous</a>)</td>
+            </tr>
+            <tr>
+              <td>Source:</td>
+              <td><a href="https://www.fieldmuseum.org/exhibitions/maximo-titanosaur" target="_blank">Field Museum</a></td>
+            </tr>
+          </table>
+          <p>This is a composite cast of many different Patagotitans, famous for being the largest dinosaur species discovered at 28 feet tall and 70 tons.</p>
+          <small><a href="https://commons.wikimedia.org/wiki/File:FMNH_Patagotitan.jpg" target="_blank">Image source</a></small>
+        </div>
+      </div>
+    </section>
+    <section class="blue">
+      <div class="content-box">
+        <div>
+          <h2>Suncor nodosaur</h2>
+          <table>
+            <tr>
+              <td>Discovered:</td>
+              <td>Alberta, 2011</td>
+            </tr>
+            <tr>
+              <td>Resides:</td>
+              <td>Royal Tyrrell Museum of Palaeontology (Alberta)</td>
+            </tr>
+            <tr>
+              <td>Dinosaur(s):</td>
+              <td>Borealopelta</td>
+            </tr>
+            <tr>
+              <td>Age:</td>
+              <td>110 million years (Early <a href="time#cret">Cretaceous</a>)</td>
+            </tr>
+            <tr>
+              <td>Source:</td>
+              <td><a href="https://en.wikipedia.org/wiki/Borealopelta">Wikipedia</a></td>
+            </tr>
+          </table>
+          <p>After dying and ending up in a river, the elements preserved this fossil so well that it almost appears to be sleeping. Paleontologists have been able to determine what color its scales were and what was in its stomach when it died.</p>
+          <small><a href="https://commons.wikimedia.org/wiki/File:Nodosaur.jpg" target="_blank">Image source</a></small>
+        </div>
+        <img src="images/nodosaur.jpg" alt="A lifelike ankylosaurian fossil lying on a display table" width="500">
+      </div>
+    </section>
+    <section class="gray">
+      <div class="content-box">
+        <img src="images/sino.jpg" alt="A small dinosaur imprint on a stone slab with little feather tufts along its spine" width="500">
+        <div>
+          <h2>Sinosauropteryx</h2>
+          <table>
+            <tr>
+              <td>Discovered:</td>
+              <td>China, 1996</td>
+            </tr>
+            <tr>
+              <td>Resides:</td>
+              <td>Inner Mongolia Museum</td>
+            </tr>
+            <tr>
+              <td>Dinosaur(s):</td>
+              <td>Sinosauropteryx</td>
+            </tr>
+            <tr>
+              <td>Age:</td>
+              <td>124 million years (Early <a href="time#cret">Cretaceous</a>)</td>
+            <tr>
+              <td>Source:</td>
+              <td><a href="https://en.wikipedia.org/wiki/Sinosauropteryx" target="_blank">Wikipedia</a></td>
+            </tr>
+          </table>
+          <p>This was one of the first fossils to establish that non-avian dinosaurs had feathers. This one's were ginger and banded, like a tabby cat.</p>
+          <small><a href="https://commons.wikimedia.org/wiki/File:Sinosauropteryxfossil.jpg" target="_blank">Image source</a></small>
+        </div>
+      </div>
+    </section>
+    <section class="blue">
+      <div class="content-box">
+        <div>
+          <h2>Berlin Archaeopteryx</h2>
+          <table>
+            <tr>
+              <td>Discovered:</td>
+              <td>Berlin, ~1874</td>
+            </tr>
+            <tr>
+              <td>Resides:</td>
+              <td>Natural History Museum of Berlin</td>
+            </tr>
+            <tr>
+              <td>Dinosaur(s):</td>
+              <td>Archaeopteryx</td>
+            </tr>
+            <tr>
+              <td>Age:</td>
+              <td>150 million years</td>
+            </tr>
+            <tr>
+              <td>Source:</td>
+              <td><a href="https://en.wikipedia.org/wiki/Specimens_of_Archaeopteryx#The_Berlin_specimen" target="_blank">Wikipedia</a></td>
+            </tr>
+          </table>
+          <p>Said to be the missing link between dinosaurs and birds, this fossil has clear imprints of wings that allowed it to fly. There are only around 12 Archaeopteryx fossils known.</p>
+          <small><a href="https://commons.wikimedia.org/wiki/File:Archaeopteryx_fossil.jpg" target="_blank">Image source</a></small>
+        </div>
+        <img src="images/archae.jpg" alt="A fossil slab with a small contorted Archaeopteryx skeleton with wing and feather imprints." width="500">
+      </div>
+    </section>
+    <section class="gray" id="hatcher">
+      <div class="content-box">
+        <img src="images/hatcher.jpg" alt="Hatcher the triceratops on his old display at the Smithsonian" width="500">
+        <div>
+          <h2>Hatcher</h2>
+          <table>
+            <tr>
+              <td>Discovered:</td>
+              <td>1888-1891, US</td>
+            </tr>
+            <tr>
+              <td>Resides:</td>
+              <td>Smithsonian National Museum of Natural History</td>
+            </tr>
+            <tr>
+              <td>Dinosaur(s):</td>
+              <td><a href="species.html#tricer">Triceratops</a></td>
+            </tr>
+            <tr>
+              <td>Age:</td>
+              <td>66 million years (Late <a href="time#cret">Cretaceous</a>)</td>
+            <tr>
+              <td>Source:</td>
+              <td><a href="https://www.smithsonianmag.com/blogs/national-museum-of-natural-history/2018/08/10/elegy-hatcher-triceratops/" target="_blank">Smithsonian</a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a href="https://en.wikipedia.org/wiki/Triceratops" target="_blank">Wikipedia</a></td>
+            </tr>
+          </table>
+          <p>Hatcher is the first Triceratops fossil ever displayed. Like Maximo, this fossil was built from compositing many different specimens. The original Hatcher was awkward-looking due to its unproportional parts, but in 1996 it was replaced with an appropriately-sized cast. Today, Hatcher is being eaten by the Smithsonian's new T. rex!</p>
+          <small><a href="https://commons.wikimedia.org/wiki/File:Smithsonian_Museum_of_Natural_History_Triceratops.jpg" target="_blank">Image source</a></small>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
