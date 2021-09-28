@@ -134,6 +134,7 @@ img {
     visibility: hidden;
 }
 
+/**
 @media only screen and (max-width: 400px) {
    iframe {
        visibility: hidden;
@@ -155,4 +156,4 @@ img {
    .information {
     top: 15vh;
    }
-}
+} **/
