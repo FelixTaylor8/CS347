@@ -39,7 +39,7 @@ a {
 }
 
 .showcase {
-    background-image: url("Dinosaurs\images\splash.jpg");
+    background-image: url("/Dinosaurs/images/splash.jpg");
 	background-size: cover;
 	background-position: center;
 	height: 100vh;
