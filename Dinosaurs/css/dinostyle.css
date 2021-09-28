@@ -84,8 +84,6 @@ nav {
 
   .gray {
      background-color:rgb(224, 224, 224);
-     padding-top: 10px;
-     padding-bottom: 15px;
      color:rgb(49, 79, 126);
   }
 
@@ -129,7 +127,7 @@ img {
    height: auto;
 }
 
-.showcase img {
+.rainbow {
     visibility: hidden;
 }
 
@@ -144,10 +142,18 @@ img {
    .showcase {
        background-image: none;
        background-color: #b5d7fc;
-       height: 70vh;
+       height: 80vh;
    }
 
-   .showcase img {
-       visibility: visible;
+   .information {
+       top: 20vh;
    }
+}
+
+@media only screen and (max-width: 768px) {
+    .rainbow {
+        visibility: visible;
+        position: absolute;
+        bottom: 5vh;
+    }
 }
