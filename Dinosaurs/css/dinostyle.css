@@ -39,7 +39,7 @@ a {
 }
 
 .showcase {
-    background-image: url("/Dinosaurs/images/splash.jpg");
+    background-image: url("splash.jpg");
 	background-size: cover;
 	background-position: center;
 	height: 100vh;
@@ -52,7 +52,6 @@ a:hover {
 header {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
 	align-items: center;
     justify-content: space-between;
     position: relative;
@@ -130,12 +129,11 @@ img {
    height: auto;
 }
 
-.rainbow {
+.showcase img {
     visibility: hidden;
 }
 
-/**
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 768px) {
    iframe {
        visibility: hidden;
        height: 0px;
@@ -152,8 +150,4 @@ img {
    .showcase img {
        visibility: visible;
    }
-
-   .information {
-    top: 15vh;
-   }
-} **/
+}
