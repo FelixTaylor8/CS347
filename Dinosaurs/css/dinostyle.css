@@ -1,6 +1,10 @@
 body {
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: 'Trebuchet MS', serif;
     margin: 0;
+}
+
+h1, h2, h3, .navlinks {
+    font-family: Verdana, sans-serif;
 }
 
 .navlinks {
@@ -125,17 +129,25 @@ p {
 img {
    max-width: 100%;
    height: auto;
+   animation-duration: 2s;
+   animation-name: fadein;
 }
+
+  @keyframes fadein {
+    from {
+      opacity: 0%;
+    }
+  
+    to {
+      opacity: 100%;
+    }
+  }
 
 .rainbow {
     visibility: hidden;
 }
 
 @media only screen and (max-width: 768px) {
-   iframe {
-       visibility: hidden;
-       height: 0px;
-   }
    .content-box {
         flex-direction: column;
    }
