@@ -133,11 +133,6 @@ img {
    animation-name: fadein;
 }
 
-.showcase {
-    animation-duration: 1s;
-    animation-name: fadein;
-}
-
   @keyframes fadein {
     from {
       opacity: 0%;
