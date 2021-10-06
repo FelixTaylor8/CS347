@@ -154,18 +154,16 @@ img {
    .showcase {
        background-image: none;
        background-color: #b5d7fc;
-       height: 80vh;
+       height: 85vh;
    }
 
    .information {
        top: 20vh;
    }
-}
 
-@media only screen and (max-width: 768px) {
-    .rainbow {
-        visibility: visible;
-        position: absolute;
-        bottom: 5vh;
-    }
+   .rainbow {
+    visibility: visible;
+    position: absolute;
+    bottom: 5vh;
+   }
 }
