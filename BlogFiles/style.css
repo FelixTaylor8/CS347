@@ -110,3 +110,9 @@ body {
 	font-size: 30px;
 	text-align: center;
 }
+
+section div {
+	max-width: 80%;
+	margin: 0 auto;
+
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>APIR Blog</title>
+  </head>
+  <body>
+    <header id="showcase">
+      <h1>10/07/21</h1>
+      <h2>Felix Taylor</h2>
+      <a href="#a" class="button">Read</a>
+    </header>
+    <section id="a">
+      <div>
+      <p>I watched <a href="https://youtu.be/v7rSSy8CaYE" target="_blank">this</a> video about DOM traversal, here are some notes:</p>
+      <ul>
+        <li>Elements selected by ID can be passed as arguments to functions</li>
+        <li>Elements can be selected by class, and the resulting collection can be turned into an array with</li>
+        <pre><code>Array.from(document.getElementByClassName(""));</code></pre>
+        <li>querySelector does the same thing as getElementById, using CSS selectors instead of HTML IDs/classes</li>
+        <li>If there's more than one element with the same class, querySelector will use the first one</li>
+        <li>querySelectorAll gets all of the classes, and it can use forEach, unlike getElement</li>
+        <li>.children can select an element's children (ofc), which should also be converted to an array</li>
+        <li>.parentElement can select an element's parent, and parents can be skipped by using .closest</li>
+        <li>.nextElementSibling gets an element's next sibling, .previousElementSibling does the opposite</li>
+      </ul>
+      <p>I also watched <a href="https://www.youtube.com/watch?v=XF1_MlZ5l6M" target="_blank">this</a> one about event listeners</p>
+      <ul>
+        <li>Bubbling refers to event listeners working on the closest element and moving up</li>
+        <li>Capturing refers to event listeners working on the furthest first</li>
+        <li>Event listeners can use capturing instead of bubbling by doing this:</li>
+        <pre><code>element.addEventListener("click", e => { },
+          {capture: true}
+        )
+        </code></pre>
+        <li>.stopPropagation() prevents it from looking for other event listeners</li>
+        <li>{ once: true } will prevent an event listener from being used again -- no global bools!</li>
+        <li>Can also use .removeEventListener, but it doesn't work for anonymous functions</li>
+      </ul>
+       </div>
+    </section>
+    <section id="b">
+      <a href="index.html" id="button2">Home</a>
+    </section>
+  </body>
+</html>
