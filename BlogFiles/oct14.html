@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>APIR Blog</title>
+  </head>
+  <body>
+    <header id="showcase">
+      <h1>10/07/21</h1>
+      <h2>Felix Taylor</h2>
+      <a href="#a" class="button">Read</a>
+    </header>
+    <section id="a">
+      <div>
+          <p>I watched <a href="https://www.youtube.com/watch?v=cuEtnrL9-H0" target="_blank">this video</a> to brush up on using "fetch" with an API. It's kinda difficult for me to learn code by reading textbooks and articles, so having a video tutorial helps a lot. I'm thinking of doing a Pokemon API for the project, so my example code revolves around that.</p>
+          <p>Following the video tutorial:</p>
+          <code><pre>
+              fetch('https://pokeapi.co/api/v2/pokemon/sylveon')
+              .then(res => res.json()),
+              .then(data => console.log(data));
+          </pre></code>
+          <p>This spits out information about Sylveon.</p>
+          <p>If the Pokemon name was invalid, it would return {}</p>
+          <p>Use res.ok to ensure the resulting json is useable</p>
+          <code><pre>
+            fetch('https://pokeapi.co/api/v2/pokemon/sylveon')
+            .then(res => {
+                if (res.ok) {
+                    console.log('SUCCESS');
+                } else {
+                    console.log('Fail');
+                }
+            })
+            .then(data => console.log(data))
+            .catch(error => console.log('ERROR'));
+        </pre></code>
+        <p>He demonstrates POST, which I can't do with the API I'm using.</p>
+        <p>Also watched <a href="https://www.youtube.com/watch?v=tc8DU14qX6I" target="_blank">this video</a> for further explanations on APIs. Here are some notes:</p>
+        <ul>
+            <li>Application Programming Interface: what two applications use to communicate data to each other</li>
+            <li>JSON: JavaScript Object Notation - file uses JS objects with quotations around the element names</li>
+            <li>Use the documentation of an API if available</li>
+            <li>If https://pokeapi.co/api/v2/pokemon-species/sylveon is parsed, then looking through the flavor_text_entries list for the object where name="en" will provide a Pokedex entry</li>
+            <li>Javascript can allow pairs to be delcared together, e.g. const {name, order} = data;</li>
+        </ul>
+       </div>
+    </section>
+    <section id="b">
+      <a href="index.html" id="button2">Home</a>
+    </section>
+  </body>
+</html>
