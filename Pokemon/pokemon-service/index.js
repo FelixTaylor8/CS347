@@ -145,7 +145,3 @@ service.post('pokemon/:name', (request, response) => {
       }
     });
 });
-
-service.post('sylveon');
-
-connection.end();
