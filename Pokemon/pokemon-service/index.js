@@ -5,6 +5,7 @@ const credentials = JSON.parse(json);
 const connection = mysql.createConnection(credentials);
 
 const service = express();
+service.use(express.json());
 
 connection.connect (error => {
   if (error) {
@@ -143,5 +144,7 @@ service.post('pokemon/:name', (request, response) => {
       }
     });
 });
+
+service.post('sylveon');
 
 connection.end();
