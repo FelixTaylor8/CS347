@@ -35,7 +35,7 @@ async function getNameSpriteType(name) {
         return result;
     } catch (err) {
         alert(err);
-        Promise.reject(response);
+        Promise.reject(data);
         return NULL;
     }
 }
