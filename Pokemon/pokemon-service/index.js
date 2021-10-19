@@ -83,7 +83,7 @@ service.get('/pokemon/:name', (request, response) => {
         })
     } else {
         var result;
-        result.id = idDescGenus.id
+        result.id = idDescGenus.id;
         result.name = nameSpriteType.name;
         result.typeOne = nameSpriteType.typeOne;
         result.typeTwo = nameSpriteType.typeTwo;
