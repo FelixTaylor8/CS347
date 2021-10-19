@@ -34,7 +34,7 @@ async function getNameSpriteType(name) {
         }
         return result;
     } catch (err) {
-        alert(err);
+        console.log(err);
         return null;
     }
 }
@@ -67,7 +67,7 @@ async function getIdDescGenus(name) {
         }
         return info;
     } catch (err) {
-        alert(err);
+        console.log(err);
         return null;
     }
 }
