@@ -89,6 +89,7 @@ service.get('/pokemon/:name', (request, response) => {
         result.typeTwo = nameSpriteType.typeTwo;
         result.genus = idDescGenus.genus;
         result.description = idDescGenus.description;
+        console.log(result);
         response.json({
             ok: true,
             results: result,
