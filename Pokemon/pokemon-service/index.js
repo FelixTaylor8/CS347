@@ -82,7 +82,7 @@ service.get('/pokemon/:name', (request, response) => {
             results: `Pokemon could not be found: ${name}`,
         })
     } else {
-        var result;
+        var result = {};
         result.id = idDescGenus.id;
         result.name = nameSpriteType.name;
         result.typeOne = nameSpriteType.typeOne;
