@@ -1,3 +1,4 @@
+import fetch from "node-fetch";
 const fs = require('fs');
 const mysql = require('mysql');
 const express = require('express');
