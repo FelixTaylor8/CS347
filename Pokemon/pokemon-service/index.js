@@ -21,6 +21,30 @@ service.listen(port, () => {
 });
 
 async function getNameSpriteType(name) {
+  fetch('https://pokeapi.co/api/v2/pokemon/' + name).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("Couldn't retrieve Pokemon");
+    }
+  })
+  .then((responseJson) => {
+    var result = {};
+    result.name = data.name;
+    result.sprite = data.sprites.front_default;
+    result.typeOne = data.types[0].type.name;
+    result.typeTwo = NULL;
+    if (data.types.length > 1) {
+        result.typeTwo = data.types[1].type.name;
+    }
+    return result;
+  })
+  .catch((error) => {
+    console.log(error)
+  });
+}
+
+/**
     try {
         var response = await fetch('https://pokeapi.co/api/v2/pokemon/' + name);
         var data = await response.json();
@@ -38,7 +62,7 @@ async function getNameSpriteType(name) {
         Promise.reject(data);
         return NULL;
     }
-}
+}*/
 
 async function getIdDescGenus(name) {
     try {
