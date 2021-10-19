@@ -1,4 +1,4 @@
-import fetch from 'cross-fetch';
+const fetch = require("node-fetch");
 const fs = require('fs');
 const mysql = require('mysql');
 const express = require('express');
