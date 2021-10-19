@@ -74,7 +74,7 @@ async function getIdDescGenus(name) {
 
 service.get('/pokemon/:name', (request, response) => {
     var name = request.params.name.toLowerCase();
-    var nameSpriteType = getnameSpriteType(name);
+    var nameSpriteType = getNameSpriteType(name);
     var idDescGenus = getIdDescGenus(name);
     if (nameSpriteType == null || idDescGenus == null) {
         response.json({
