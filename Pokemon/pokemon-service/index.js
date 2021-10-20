@@ -31,7 +31,34 @@ function rowToNick(row) {
   };
 }
 
-service.get('/nicks/:mon', (request, response) => {
+function rowToMon(row) {
+  return {
+    id: row.id,
+    name: row.name,
+    likes: row.likes
+  };
+}
+
+service.get('/pokemon', (request, response) => {
+  const query = "SELECT * FROM mon";
+  connection.query(query, (error, rows) => {
+    if (error) {
+      response.status(500);
+      console.error(error);
+      response.json({
+        ok:false,
+        results: "Error",
+      })
+    } else {
+        response.json({
+        ok:true,
+        results: rows.map(rowToMon)
+      });
+    } }
+  );
+});
+
+service.get('/pokemon/nicks/:mon', (request, response) => {
   var mon = request.params.mon.toLowerCase();
   const query = "SELECT * FROM nickname WHERE mon='" + mon + "'";
   connection.query(query, (error, rows) => {
@@ -58,7 +85,7 @@ service.get('/nicks/:mon', (request, response) => {
   });
 });
 
-service.get('/nicks', (request, response) => {
+service.get('/pokemon/nicks', (request, response) => {
   const query = 'SELECT * FROM nickname';
   connection.query(query, (error, rows) => {
     if (error) {
