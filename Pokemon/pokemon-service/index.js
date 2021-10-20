@@ -10,15 +10,15 @@ service.use(express.json());
 
 var pokemon = [];
 
-connection.query("SELECT * FROM mon", (error, rows) => {
-  pokemon = rows.map(rowToMon);
-});
-
 connection.connect(error => {
     if (error) {
         console.error(error);
         process.exit(1);
     }
+});
+
+connection.query("SELECT * FROM mon", (error, rows) => {
+  pokemon = rows.map(rowToMon);
 });
 
 const port = 5004;
