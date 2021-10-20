@@ -8,6 +8,12 @@ const connection = mysql.createConnection(credentials);
 const service = express();
 service.use(express.json());
 
+var pokemon = [];
+
+connection.query("SELECT * FROM mon", (error, rows) => {
+  pokemon = rows.map(rowToMon);
+});
+
 connection.connect(error => {
     if (error) {
         console.error(error);
@@ -15,7 +21,7 @@ connection.connect(error => {
     }
 });
 
-const port = 5005;
+const port = 5004;
 service.listen(port, () => {
     console.log(`We're live in port ${port}!`);
 });
@@ -40,6 +46,13 @@ function rowToMon(row) {
 }
 
 service.get('/pokemon/all', (request, response) => {
+        response.json({
+        ok:true,
+        results: pokemon
+      });
+    });
+
+/**service.get('/pokemon/all', (request, response) => {
   const query = "SELECT * FROM mon";
   connection.query(query, (error, rows) => {
     if (error) {
@@ -56,7 +69,7 @@ service.get('/pokemon/all', (request, response) => {
       });
     } }
   );
-});
+});*/
 
 service.get('/pokemon/:mon', (request, response) => {
   const query = "SELECT * FROM mon";
@@ -122,8 +135,17 @@ service.get('/pokemon/all/nicks', (request, response) => {
   });
 });
 
+
+/**
 service.post('/pokemon/:mon/like', (request, response) => {
   var name = request.params.mon.toLowerCase();
+  var result = {};
+  fetch('http://apir.me:' + port + '/pokemon/' + name)
+    .then(data => {
+      result = data.json()[];
+    });
+
+
   var search = service.get('/pokemon/' + name);
   if (!search.ok) {
     response.json({
