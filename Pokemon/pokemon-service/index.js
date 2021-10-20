@@ -37,6 +37,7 @@ service.get('/nicks/:mon', (request, response) => {
   connection.query(query, (error, rows) => {
     if (error) {
       response.status(500);
+      console.error(error);
       response.json({
         ok:false,
         results: `No nicknames found for ${mon}`,
