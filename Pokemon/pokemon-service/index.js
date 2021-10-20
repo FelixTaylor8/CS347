@@ -33,7 +33,7 @@ function rowToNick(row) {
 
 service.get('/nicks/:mon', (request, response) => {
   var mon = request.params.mon.toLowerCase();
-  const query = `SELECT * FROM nickname WHERE mon = ${mon}`;
+  const query = "SELECT * FROM nickname WHERE mon='" = mon + "'";
   connection.query(query, (error, rows) => {
     if (error) {
       response.status(500);
