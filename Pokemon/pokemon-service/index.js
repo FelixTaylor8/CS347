@@ -43,11 +43,18 @@ service.get('/nicks/:mon', (request, response) => {
         results: `No nicknames found for ${mon}`,
       })
     } else {
-      response.json({
+      var res = rows.map(rowToNick);
+      if (res.length == 0) {
+        response.json({
+          ok:true,
+          results: `No nicknames found for ${mon}`
+        });
+      } else {
+        response.json({
         ok:true,
         results: rows.map(rowToNick)
       });
-    }
+    } }
   });
 });
 
