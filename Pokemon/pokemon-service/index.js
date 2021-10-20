@@ -1,5 +1,3 @@
-const fetch = require("node-fetch");
-const http = require('http')
 const fs = require('fs');
 const mysql = require('mysql');
 const express = require('express');
