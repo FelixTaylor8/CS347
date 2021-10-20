@@ -39,7 +39,7 @@ function rowToMon(row) {
   };
 }
 
-service.get('/pokemon', (request, response) => {
+service.get('/pokemon/all', (request, response) => {
   const query = "SELECT * FROM mon";
   connection.query(query, (error, rows) => {
     if (error) {
@@ -58,8 +58,27 @@ service.get('/pokemon', (request, response) => {
   );
 });
 
-service.get('/pokemon/nicks/:mon', (request, response) => {
-  var mon = request.params.mon.toLowerCase();
+service.get('/pokemon/:mon', (request, response) => {
+  const query = "SELECT * FROM mon";
+  connection.query(query, (error, rows) => {
+    if (error) {
+      response.status(500);
+      console.error(error);
+      response.json({
+        ok:false,
+        results: "Error",
+      })
+    } else {
+        response.json({
+        ok:true,
+        results: rows.map(rowToMon)
+      });
+    } }
+  );
+});
+
+service.get('/pokemon/:mon/nicks', (request, response) => {
+  const mon = request.params.mon.toLowerCase();
   const query = "SELECT * FROM nickname WHERE mon='" + mon + "'";
   connection.query(query, (error, rows) => {
     if (error) {
@@ -73,7 +92,7 @@ service.get('/pokemon/nicks/:mon', (request, response) => {
       var res = rows.map(rowToNick);
       if (res.length == 0) {
         response.json({
-          ok:true,
+          ok:false,
           results: `No nicknames found for ${mon}`
         });
       } else {
@@ -85,7 +104,7 @@ service.get('/pokemon/nicks/:mon', (request, response) => {
   });
 });
 
-service.get('/pokemon/nicks', (request, response) => {
+service.get('/pokemon/all/nicks', (request, response) => {
   const query = 'SELECT * FROM nickname';
   connection.query(query, (error, rows) => {
     if (error) {
@@ -101,6 +120,39 @@ service.get('/pokemon/nicks', (request, response) => {
       });
     }
   });
+});
+
+service.post('/pokemon/:mon/like', (request, response) => {
+  var name = request.params.mon.toLowerCase();
+  var search = service.get('/pokemon/' + name);
+  if (!search.ok) {
+    response.json({
+      ok: false
+    });
+  } else {
+    var result = search.results[0];
+    result.likes++;
+    const parameters = [
+      parseInt(result.id),
+      result.name,
+      paeseInt(result.likes) + 1,
+      parseInt(result.id),
+    ];
+    const query = 'UPDATE mon SET id = ?, name = ?, likes = ? WHERE id = ?';
+    connection.query(query, parameters, (error, result) => {
+      if (error) {
+        response.status(404);
+        response.json({
+          ok: false,
+          results: error.message,
+        });
+      } else {
+        response.json({
+          ok: true,
+        });
+      }
+    });
+  }
 });
 
 /**
