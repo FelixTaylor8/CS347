@@ -22,6 +22,37 @@ service.listen(port, () => {
     console.log(`We're live in port ${port}!`);
 });
 
+function rowToNick(row) {
+  return {
+    id: row.id,
+    nick: row.nick,
+    mon: row.mon,
+    reviewed: row.reviewed == 1,
+    reported: row.reported == 1,
+    likes: row.likes,
+  };
+}
+
+service.get('/nicks/:name', (request, response) => {
+  var name = request.params.name.toLowerCase();
+  const query = 'SELECT * FROM nickname WHERE name = ' + name;
+  connection.query(query, (error, rows) => {
+    if (error) {
+      response.status(500);
+      response.json({
+        ok:false,
+        results: `No nicknames exist for ${name}`,
+      })
+    } else {
+      response.json({
+        ok:true,
+        results: rows.map(rowToNick)
+      });
+    }
+  });
+});
+
+/**
 async function getNameSpriteType(name) {
     try {
         var response = await fetch('https://pokeapi.co/api/v2/pokemon/' + name);
