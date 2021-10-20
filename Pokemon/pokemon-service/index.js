@@ -41,7 +41,25 @@ service.get('/nicks/:name', (request, response) => {
       response.status(500);
       response.json({
         ok:false,
-        results: `No nicknames exist for ${name}`,
+        results: `No nicknames found for ${name}`,
+      })
+    } else {
+      response.json({
+        ok:true,
+        results: rows.map(rowToNick)
+      });
+    }
+  });
+});
+
+service.get('/nicks', (request, response) => {
+  const query = 'SELECT * FROM nickname';
+  connection.query(query, (error, rows) => {
+    if (error) {
+      response.status(500);
+      response.json({
+        ok:false,
+        results: `No nicknames found.`,
       })
     } else {
       response.json({
