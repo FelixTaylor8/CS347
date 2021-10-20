@@ -31,15 +31,15 @@ function rowToNick(row) {
   };
 }
 
-service.get('/nicks/:name', (request, response) => {
-  var name = request.params.name.toLowerCase();
-  const query = 'SELECT * FROM nickname WHERE name = ' + name;
+service.get('/nicks/:mon', (request, response) => {
+  var mon = request.params.mon.toLowerCase();
+  const query = 'SELECT * FROM nickname WHERE mon = ' + name;
   connection.query(query, (error, rows) => {
     if (error) {
       response.status(500);
       response.json({
         ok:false,
-        results: `No nicknames found for ${name}`,
+        results: `No nicknames found for ${mon}`,
       })
     } else {
       response.json({
