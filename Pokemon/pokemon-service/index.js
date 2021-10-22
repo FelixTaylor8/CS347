@@ -91,7 +91,7 @@ service.post('/nicks/:id/like', (request, response) => {
   const id = parseInt(request.params.id);
   const query = "SELECT likes FROM nickname WHERE id='" + id + "'";
   connection.query(query, (error, packet) => {
-    console.log(packet.likes);
+    console.log(packet[0].likes);
     if (error) {
       response.status(500);
       console.error(error);
@@ -100,7 +100,7 @@ service.post('/nicks/:id/like', (request, response) => {
         results: `No nickname associated with ${id}`,
       })
     } else {
-      var newInt = parseInt(packet.likes) + 1;
+      var newInt = parseInt(packet[0].likes) + 1;
       const parameters = [
         newInt,
         id
