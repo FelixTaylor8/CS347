@@ -91,7 +91,7 @@ service.post('/nicks/:id/like', (request, response) => {
   const id = request.params.id;
   const query = "SELECT likes FROM nickname WHERE id='" + id + "'";
   connection.query(query, (error, packet) => {
-    if (error) {
+    if (error || packet == null || packet[0] == null) {
       response.status(500);
       console.error(error);
       response.json({
@@ -118,8 +118,9 @@ service.post('/nicks/:id/like', (request, response) => {
           });
         }
       });
-     }
-  }); 
+    } 
+  });
+}
 });
 
 service.get('/pokemon', (request, response) => {
