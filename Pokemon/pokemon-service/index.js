@@ -56,7 +56,7 @@ function findMon(name) {
   return -1;
 }
 
-service.post('pokemon/:mon/like', (request, response) => {
+service.post('/pokemon/:mon/like', (request, response) => {
   const monName = request.params.mon.toLowerCase();
   var index = findMon(monName);
   if (index > -1) {
