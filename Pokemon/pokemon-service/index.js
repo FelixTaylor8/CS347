@@ -91,7 +91,6 @@ service.post('/nicks/:id/like', (request, response) => {
   const id = request.params.id;
   const query = "SELECT likes FROM nickname WHERE id='" + id + "'";
   connection.query(query, (error, packet) => {
-    console.log(packet[0].likes);
     if (error) {
       response.status(500);
       console.error(error);
@@ -101,12 +100,10 @@ service.post('/nicks/:id/like', (request, response) => {
       })
     } else {
       var newInt = parseInt(packet[0].likes) + 1;
-      console.log(newInt);
       const parameters = [
         newInt,
         id
       ];
-      try {
       const newQuery = "UPDATE nickname SET likes = ? WHERE id = ?";
       connection.query(newQuery, parameters, (error, result) => {
         if (error) {
@@ -121,14 +118,8 @@ service.post('/nicks/:id/like', (request, response) => {
           });
         }
       });
-    } catch (err) {
-      response.json({
-        ok: false,
-        results: "Nickname not found"
-      });
-    }
-  }
-  });
+     }
+  }); 
 });
 
 service.get('/pokemon', (request, response) => {
