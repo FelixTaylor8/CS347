@@ -101,6 +101,7 @@ service.post('/nicks/:id/like', (request, response) => {
       })
     } else {
       var newInt = parseInt(packet[0].likes) + 1;
+      console.log(newInt);
       const parameters = [
         newInt,
         id
