@@ -104,6 +104,7 @@ service.post('/nicks/:id/like', (request, response) => {
         newInt,
         id
       ];
+      console.log(newInt);
       const newQuery = 'UPDATE nickname SET likes = ? WHERE id = ?';
       connection.query(query, parameters, (error, result) => {
         if (error) {
