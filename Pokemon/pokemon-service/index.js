@@ -129,7 +129,7 @@ service.get('/pokemon/:mon', (request, response) => {
   );
 });
 
-service.get('/pokemon/:mon/nicks', (request, response) => {
+service.get('/nicks/:mon', (request, response) => {
   const mon = request.params.mon.toLowerCase();
   const query = "SELECT * FROM nickname WHERE mon='" + mon + "'";
   connection.query(query, (error, rows) => {
@@ -156,7 +156,7 @@ service.get('/pokemon/:mon/nicks', (request, response) => {
   });
 });
 
-service.get('/pokemon/nicks', (request, response) => {
+service.get('/nicks', (request, response) => {
   const query = 'SELECT * FROM nickname';
   connection.query(query, (error, rows) => {
     if (error) {
