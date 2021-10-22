@@ -120,7 +120,6 @@ service.post('/nicks/:id/like', (request, response) => {
       });
     } 
   });
-}
 });
 
 service.get('/pokemon', (request, response) => {
