@@ -106,6 +106,7 @@ service.post('/nicks/:id/like', (request, response) => {
         newInt,
         id
       ];
+      try {
       const newQuery = "UPDATE nickname SET likes = ? WHERE id = ?";
       connection.query(newQuery, parameters, (error, result) => {
         if (error) {
@@ -119,11 +120,14 @@ service.post('/nicks/:id/like', (request, response) => {
             ok: true
           });
         }
-        response.json({
-          ok: false
-        });
       });
-     }
+    } catch (err) {
+      response.json({
+        ok: false,
+        results: "Nickname not found"
+      });
+    }
+  }
   });
 });
 
