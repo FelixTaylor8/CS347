@@ -128,7 +128,7 @@ service.post('/nicks/:id/report', (request, response) => {
     1,
     id
   ]
-  const query = 'UPDATE nick SET reported = ? WHERE id = ?';
+  const query = 'UPDATE nickname SET reported = ? WHERE id = ?';
   connection.query(query, parameters, (error, result) => {
     if (error) {
       response.status(500);
@@ -150,7 +150,7 @@ service.post('/nicks/:id/approve', (request, response) => {
     1,
     id
   ]
-  const query = 'UPDATE nick SET reviewed = ? WHERE id = ?';
+  const query = 'UPDATE nickname SET reviewed = ? WHERE id = ?';
   connection.query(query, parameters, (error, result) => {
     if (error) {
       response.status(500);
