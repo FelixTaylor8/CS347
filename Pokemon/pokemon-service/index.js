@@ -119,6 +119,9 @@ service.post('/nicks/:id/like', (request, response) => {
             ok: true
           });
         }
+        response.json({
+          ok: false
+        });
       });
      }
   });
