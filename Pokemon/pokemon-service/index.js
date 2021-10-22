@@ -91,6 +91,7 @@ service.post('/nicks/:id/like', (request, response) => {
   const id = parseInt(request.params.id);
   const query = "SELECT likes FROM nickname WHERE id='" + id + "'";
   connection.query(query, (error, likes) => {
+    console.log(likes);
     if (error) {
       response.status(500);
       console.error(error);
@@ -104,7 +105,6 @@ service.post('/nicks/:id/like', (request, response) => {
         newInt,
         id
       ];
-      console.log(newInt);
       const newQuery = 'UPDATE nickname SET likes = ? WHERE id = ?';
       connection.query(query, parameters, (error, result) => {
         if (error) {
