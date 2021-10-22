@@ -49,21 +49,21 @@ function rowToMon(row) {
   };
 }
 
-function findMon(name, id) {
+function findMon(name) {
   for (let k = 0; k < pokemon.length; k++) {
     if (pokemon[k].name === name) return k;
   }
   return -1;
 }
 
-service.post('pokemon/like', (request, response) => {
+service.post('pokemon/:mon/like', (request, response) => {
   const monName = request.params.mon.toLowerCase();
   var index = findMon(monName);
-  if (index > -1 && request.body.hasOwnProperty('name')) {
+  if (index > -1) {
   pokemon[index].likes++;
   const parameters = [
     pokemon[index].id,
-    request.body.name,
+    monName,
     pokemon[index].likes,
     pokemon[index].id,
   ];
