@@ -17,11 +17,15 @@ connection.connect(error => {
     }
 });
 
+/**
+ * This is so post requests are easier to make
+ * without checking if the Pokemon exists first
+ */
 connection.query("SELECT * FROM mon", (error, rows) => {
   pokemon = rows.map(rowToMon);
 });
 
-const port = 5004;
+const port = 5009;
 service.listen(port, () => {
     console.log(`We're live in port ${port}!`);
 });
@@ -45,14 +49,50 @@ function rowToMon(row) {
   };
 }
 
-service.get('/pokemon/all', (request, response) => {
-        response.json({
-        ok:true,
-        results: pokemon
-      });
-    });
+function findMon(name, id) {
+  for (let k = 0; k < pokemon.length; k++) {
+    if (pokemon[k].name === name) return k;
+  }
+  return -1;
+}
 
-/**service.get('/pokemon/all', (request, response) => {
+service.post('pokemon/like', (request, response) => {
+  const monName = request.params.mon.toLowerCase();
+  var index = findMon(monName);
+  if (index > -1 && request.body.hasOwnProperty('name')) {
+  pokemon[index].likes++;
+  const parameters = [
+    pokemon[index].id,
+    request.body.name,
+    pokemon[index].likes,
+    pokemon[index].id,
+  ];
+  const query = 'UPDATE mon SET id = ?, name = ?, likes = ? WHERE id = ?';
+  connection.query(query, parameters, (error, result) => {
+    if (error) {
+      response.status(500);
+      response.json({
+        ok: false,
+        results: error.message,
+      });
+    } else {
+      response.json({
+        ok: true,
+      });
+    }
+  });
+
+} else {
+  response.status(400);
+  response.json({
+    ok: false,
+    results: 'Pokemon not found.',
+  });
+}
+
+});
+
+service.get('/pokemon/all', (request, response) => {
   const query = "SELECT * FROM mon";
   connection.query(query, (error, rows) => {
     if (error) {
@@ -69,7 +109,7 @@ service.get('/pokemon/all', (request, response) => {
       });
     } }
   );
-});*/
+});
 
 service.get('/pokemon/:mon', (request, response) => {
   const query = "SELECT * FROM mon";
