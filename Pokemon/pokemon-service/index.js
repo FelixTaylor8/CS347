@@ -99,8 +99,9 @@ service.post('/nicks/:id/like', (request, response) => {
         results: `No nickname associated with ${id}`,
       })
     } else {
+      var newInt = parseInt(likes) + 1;
       const parameters = [
-        likes + 1,
+        newInt,
         id
       ];
       const newQuery = 'UPDATE nickname SET likes = ? WHERE id = ?';
@@ -113,7 +114,7 @@ service.post('/nicks/:id/like', (request, response) => {
           });
         } else {
           response.json({
-            ok: true,
+            ok: true
           });
         }
       });
