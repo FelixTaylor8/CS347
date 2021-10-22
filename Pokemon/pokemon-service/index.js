@@ -88,7 +88,7 @@ service.post('/pokemon/:monId/like', (request, response) => {
 });
 
 service.post('/nicks/:id/like', (request, response) => {
-  const id = parseInt(request.params.id);
+  const id = request.params.id;
   const query = "SELECT likes FROM nickname WHERE id='" + id + "'";
   connection.query(query, (error, packet) => {
     console.log(packet[0].likes);
@@ -106,7 +106,7 @@ service.post('/nicks/:id/like', (request, response) => {
         newInt,
         id
       ];
-      const newQuery = 'UPDATE nickname SET likes = ? WHERE id = ?';
+      const newQuery = "UPDATE nickname SET likes = ? WHERE id = ?";
       connection.query(query, parameters, (error, result) => {
         if (error) {
           response.status(500);
