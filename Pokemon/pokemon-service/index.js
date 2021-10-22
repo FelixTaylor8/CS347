@@ -56,18 +56,15 @@ function findMon(name) {
   return -1;
 }
 
-service.post('/pokemon/:mon/like', (request, response) => {
-  const monName = request.params.mon.toLowerCase();
-  var index = findMon(monName);
-  if (index > -1) {
-  pokemon[index].likes++;
+service.post('/pokemon/:monId/like', (request, response) => {
+  const monId = parseInt(request.params.mon);
+  if (monId > -1 && monId < pokemon.size) {
+  pokemon[monId].likes++;
   const parameters = [
-    pokemon[index].id,
-    monName,
-    pokemon[index].likes,
-    pokemon[index].id,
+    pokemon[monId].likes,
+    monId,
   ];
-  const query = 'UPDATE mon SET id = ?, name = ?, likes = ? WHERE id = ?';
+  const query = 'UPDATE mon SET likes = ? WHERE id = ?';
   connection.query(query, parameters, (error, result) => {
     if (error) {
       response.status(500);
@@ -81,7 +78,6 @@ service.post('/pokemon/:mon/like', (request, response) => {
       });
     }
   });
-
 } else {
   response.status(400);
   response.json({
@@ -91,7 +87,41 @@ service.post('/pokemon/:mon/like', (request, response) => {
 }
 });
 
-service.get('/pokemon/all', (request, response) => {
+service.post('/nicks/:id/like', (request, response) => {
+  const id = parseInt(request.params.id);
+  const query = "SELECT likes FROM nickname WHERE id='" + id + "'";
+  connection.query(query, (error, likes) => {
+    if (error) {
+      response.status(500);
+      console.error(error);
+      response.json({
+        ok:false,
+        results: `No nickname associated with ${id}`,
+      })
+    } else {
+      const parameters = [
+        likes + 1,
+        id
+      ];
+      const newQuery = 'UPDATE nickname SET likes = ? WHERE id = ?';
+      connection.query(query, parameters, (error, result) => {
+        if (error) {
+          response.status(500);
+          response.json({
+            ok: false,
+            results: error.message,
+          });
+        } else {
+          response.json({
+            ok: true,
+          });
+        }
+      });
+     }
+  });
+});
+
+service.get('/pokemon', (request, response) => {
   const query = "SELECT * FROM mon";
   connection.query(query, (error, rows) => {
     if (error) {
