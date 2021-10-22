@@ -1,4 +1,3 @@
-POST a new like for a specific Pokemon
 POST a new like for a specific nickname
 POST a report for a nickname
 

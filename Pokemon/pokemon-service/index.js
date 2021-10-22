@@ -89,7 +89,6 @@ service.post('/pokemon/:mon/like', (request, response) => {
     results: 'Pokemon not found.',
   });
 }
-
 });
 
 service.get('/pokemon/all', (request, response) => {
@@ -157,7 +156,7 @@ service.get('/pokemon/:mon/nicks', (request, response) => {
   });
 });
 
-service.get('/pokemon/all/nicks', (request, response) => {
+service.get('/pokemon/nicks', (request, response) => {
   const query = 'SELECT * FROM nickname';
   connection.query(query, (error, rows) => {
     if (error) {
