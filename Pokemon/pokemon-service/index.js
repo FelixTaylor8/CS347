@@ -122,6 +122,50 @@ service.post('/nicks/:id/like', (request, response) => {
   });
 });
 
+service.post('/nicks/:id/report', (request, response) => {
+  const id = request.params.id;
+  parameters = [
+    1,
+    id
+  ]
+  const query = 'UPDATE nick SET reported = ? WHERE id = ?';
+  connection.query(query, parameters, (error, result) => {
+    if (error) {
+      response.status(500);
+      response.json({
+        ok: false,
+        results: error.message,
+      });
+    } else {
+      response.json({
+        ok: true,
+      });
+    }
+  });
+});
+
+service.post('/nicks/:id/approve', (request, response) => {
+  const id = request.params.id;
+  parameters = [
+    1,
+    id
+  ]
+  const query = 'UPDATE nick SET reviewed = ? WHERE id = ?';
+  connection.query(query, parameters, (error, result) => {
+    if (error) {
+      response.status(500);
+      response.json({
+        ok: false,
+        results: error.message,
+      });
+    } else {
+      response.json({
+        ok: true,
+      });
+    }
+  });
+});
+
 service.get('/pokemon', (request, response) => {
   const query = "SELECT * FROM mon";
   connection.query(query, (error, rows) => {
