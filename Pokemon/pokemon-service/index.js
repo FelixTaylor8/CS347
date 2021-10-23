@@ -256,7 +256,7 @@ service.post('/nick', (request, response) => {
   findMon(request.body.mon)) {
     const parameters = [
       parseInt(request.body.id),
-      request.body.name,
+      request.body.nick,
       request.body.mon,
       0,
       0,
