@@ -1,6 +1,3 @@
-POST a report for a nickname
-POST an approval for a nickname
-
 GET descriptions for a specific Pokemon
 POST descriptions for a specific Pokemon
 POST a new like for a specific description

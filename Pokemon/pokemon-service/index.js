@@ -51,9 +51,9 @@ function rowToMon(row) {
 
 function findMon(name) {
   for (let k = 0; k < pokemon.length; k++) {
-    if (pokemon[k].name === name) return k;
+    if (pokemon[k].name === name) return true;
   }
-  return -1;
+  return false;
 }
 
 service.post('/pokemon/:monId/like', (request, response) => {
@@ -247,6 +247,42 @@ service.get('/nicks', (request, response) => {
       });
     }
   });
+});
+
+service.post('/nicks', (request, response) => {
+  if (request.body.hasOwnProperty('id') && 
+  request.body.hasOwnProperty('name') && 
+  request.body.hasOwnProperty('mon') && 
+  findMon(request.body.mon)) {
+    const parameters = [
+      parseInt(request.body.id),
+      request.body.name,
+      request.body.mon,
+      0,
+      0,
+      0
+    ];
+    var query = "INSERT INTO nickname(id, name, mon, reviewed, reported, likes) VALUES ('?, ?, ?, ?, ?, ?')";
+    mysql.query(query, parameters, (error, result) => {
+      if (error) {
+        response.status(500);
+        response.json({
+          ok: false,
+          results: error.message,
+        });
+      } else {
+        response.json({
+          ok: true,
+          results: "Nickname successfully added.",
+        });
+      }
+    });
+  } else {
+    response.json({
+      ok: false,
+      results: "Invalid input"
+    });
+  }
 });
 
 
