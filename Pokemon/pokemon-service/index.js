@@ -17,15 +17,45 @@ connection.connect(error => {
     }
 });
 
-connection.query("INSERT INTO mon(id, name, likes) VALUES (13, 'weedle', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (14, 'kakuna', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (15, 'beedrill', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (16, 'pidgey', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (17, 'pidgeotto', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (18, 'pidgeot', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (19, 'rattata', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (20, 'raticate', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (21, 'spearow', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (22, 'fearow', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (23, 'ekans', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (24, 'arbok', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (25, 'pikachu', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (26, 'raichu', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (27, 'sandshrew', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (28, 'sandslash', 0)");
 
+
+
+connection.query("INSERT INTO mon(id, name, likes) VALUES (29, 'nidoranf', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (30, 'nidorina', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (31, 'nidoqueen', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (32, 'nidoranm', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (33, 'nidorino', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (34, 'nidoking', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (35, 'clefairy', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (36, 'clefable', 0)");
+
+
+connection.query("INSERT INTO mon(id, name, likes) VALUES (37, 'vulpix', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (38, 'ninetales', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (39, 'jigglypuff', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (40, 'wigglytuff', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (41, 'zubat', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (42, 'golbat', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (43, 'oddish', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (44, 'gloom', 0)");
+
+connection.query("INSERT INTO mon(id, name, likes) VALUES (45, 'vileplume', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (46, 'paras', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (47, 'parasect', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (48, 'venonat', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (49, 'venomoth', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (50, 'diglett', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (51, 'dugtrio', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (52, 'meowth', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (53, 'persian', 0)");
 
 /**
  * This is so post requests are easier to make
