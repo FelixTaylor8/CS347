@@ -17,6 +17,16 @@ connection.connect(error => {
     }
 });
 
+connection.query("INSERT INTO mon(id, name, likes) VALUES (13, 'weedle', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (14, 'kakuna', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (15, 'beedrill', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (16, 'pidgey', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (17, 'pidgeotto', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (18, 'pidgeot', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (19, 'rattata', 0)");
+connection.query("INSERT INTO mon(id, name, likes) VALUES (20, 'raticate', 0)");
+
+
 /**
  * This is so post requests are easier to make
  * without checking if the Pokemon exists first
@@ -51,7 +61,7 @@ function rowToMon(row) {
 
 function findMon(name) {
   for (let k = 0; k < pokemon.length; k++) {
-    if (pokemon[k].name === name) return true;
+    if (pokemon[k].name === name.toLowerCase()) return true;
   }
   return false;
 }
@@ -257,7 +267,7 @@ service.post('/nick', (request, response) => {
     const parameters = [
       parseInt(request.body.id),
       request.body.nick,
-      request.body.mon,
+      request.body.mon.toLowerCase(),
       0,
       0,
       0
