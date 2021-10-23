@@ -249,9 +249,9 @@ service.get('/nicks', (request, response) => {
   });
 });
 
-service.post('/nicks', (request, response) => {
+service.post('/nick', (request, response) => {
   if (request.body.hasOwnProperty('id') && 
-  request.body.hasOwnProperty('name') && 
+  request.body.hasOwnProperty('nick') && 
   request.body.hasOwnProperty('mon') && 
   findMon(request.body.mon)) {
     const parameters = [
