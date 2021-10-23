@@ -262,7 +262,7 @@ service.post('/nick', (request, response) => {
       0,
       0
     ];
-    var query = "INSERT INTO nickname(id, name, mon, reviewed, reported, likes) VALUES (?, ?, ?, ?, ?, ?)";
+    var query = "INSERT INTO nickname(id, nick, mon, reviewed, reported, likes) VALUES (?, ?, ?, ?, ?, ?)";
     connection.query(query, parameters, (error, result) => {
       if (error) {
         response.status(500);
