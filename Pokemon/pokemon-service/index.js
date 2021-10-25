@@ -17,7 +17,7 @@ connection.connect(error => {
     }
 });
 
-connection.query("INSERT INTO mon VALUES (55, 'golduck'', 0)");
+connection.query("INSERT INTO mon VALUES (55, 'golduck', 0)");
 connection.query("INSERT INTO mon VALUES (56, 'mankey', 0)");
 connection.query("INSERT INTO mon VALUES (57, 'primeape', 0)");
 connection.query("INSERT INTO mon VALUES (58, 'growlithe', 0)");
