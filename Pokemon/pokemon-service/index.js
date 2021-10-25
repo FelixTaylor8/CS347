@@ -17,23 +17,6 @@ connection.connect(error => {
     }
 });
 
-
-connection.query("INSERT INTO mon VALUES (85, 'dodrio', 0)");
-connection.query("INSERT INTO mon VALUES (86, 'seel', 0)");
-connection.query("INSERT INTO mon VALUES (87, 'dewgong', 0)");
-connection.query("INSERT INTO mon VALUES (88, 'grimer', 0)");
-connection.query("INSERT INTO mon VALUES (89, 'muk', 0)");
-connection.query("INSERT INTO mon VALUES (90, 'shellder', 0)");
-connection.query("INSERT INTO mon VALUES (91, 'cloyster', 0)");
-connection.query("INSERT INTO mon VALUES (92, 'gastly', 0)");
-connection.query("INSERT INTO mon VALUES (93, 'haunter', 0)");
-connection.query("INSERT INTO mon VALUES (94, 'gengar', 0)");
-connection.query("INSERT INTO mon VALUES (95, 'onix', 0)");
-connection.query("INSERT INTO mon VALUES (96, 'drowzee', 0)");
-connection.query("INSERT INTO mon VALUES (97, 'hypno', 0)");
-connection.query("INSERT INTO mon VALUES (98, 'krabby', 0)");
-connection.query("INSERT INTO mon VALUES (99, 'kingler', 0)");
-
 /**
  * This is so post requests are easier to make
  * without checking if the Pokemon exists first
