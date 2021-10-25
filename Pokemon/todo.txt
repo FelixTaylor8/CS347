@@ -1,8 +1,10 @@
-GET descriptions for a specific Pokemon
-POST descriptions for a specific Pokemon
-POST a new like for a specific description
-POST a report for a specific description
-POST an approval for a specific nickname
+GET facts for a specific Pokemon
+POST facts for a specific Pokemon
+POST a new like for a specific fact
+POST a report for a specific fact
+POST approval for a fact
+remove report for a fact
+get all facts
 
-POST a new nickname
-POST a new description
+POST a new fact
+delete a fact

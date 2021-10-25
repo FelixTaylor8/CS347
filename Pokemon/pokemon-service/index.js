@@ -17,46 +17,6 @@ connection.connect(error => {
     }
 });
 
-connection.query("INSERT INTO mon(id, name, likes) VALUES (21, 'spearow', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (22, 'fearow', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (23, 'ekans', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (24, 'arbok', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (25, 'pikachu', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (26, 'raichu', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (27, 'sandshrew', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (28, 'sandslash', 0)");
-
-
-
-connection.query("INSERT INTO mon(id, name, likes) VALUES (29, 'nidoranf', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (30, 'nidorina', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (31, 'nidoqueen', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (32, 'nidoranm', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (33, 'nidorino', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (34, 'nidoking', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (35, 'clefairy', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (36, 'clefable', 0)");
-
-
-connection.query("INSERT INTO mon(id, name, likes) VALUES (37, 'vulpix', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (38, 'ninetales', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (39, 'jigglypuff', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (40, 'wigglytuff', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (41, 'zubat', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (42, 'golbat', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (43, 'oddish', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (44, 'gloom', 0)");
-
-connection.query("INSERT INTO mon(id, name, likes) VALUES (45, 'vileplume', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (46, 'paras', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (47, 'parasect', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (48, 'venonat', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (49, 'venomoth', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (50, 'diglett', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (51, 'dugtrio', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (52, 'meowth', 0)");
-connection.query("INSERT INTO mon(id, name, likes) VALUES (53, 'persian', 0)");
-
 /**
  * This is so post requests are easier to make
  * without checking if the Pokemon exists first
@@ -96,7 +56,7 @@ function findMon(name) {
   return false;
 }
 
-service.post('/pokemon/:monId/like', (request, response) => {
+service.patch('/pokemon/:monId/like', (request, response) => {
   const monId = parseInt(request.params.mon);
   if (monId > -1 && monId < pokemon.size) {
   pokemon[monId].likes++;
@@ -127,7 +87,7 @@ service.post('/pokemon/:monId/like', (request, response) => {
 }
 });
 
-service.post('/nicks/:id/like', (request, response) => {
+service.patch('/nicks/:id/like', (request, response) => {
   const id = request.params.id;
   const query = "SELECT likes FROM nickname WHERE id='" + id + "'";
   connection.query(query, (error, packet) => {
@@ -162,7 +122,7 @@ service.post('/nicks/:id/like', (request, response) => {
   });
 });
 
-service.post('/nicks/:id/report', (request, response) => {
+service.patch('/nicks/:id/report', (request, response) => {
   const id = request.params.id;
   parameters = [
     1,
@@ -184,7 +144,29 @@ service.post('/nicks/:id/report', (request, response) => {
   });
 });
 
-service.post('/nicks/:id/approve', (request, response) => {
+service.patch('/nicks/:id/removereport', (request, response) => {
+  const id = request.params.id;
+  parameters = [
+    0,
+    id
+  ]
+  const query = 'UPDATE nickname SET reported = ? WHERE id = ?';
+  connection.query(query, parameters, (error, result) => {
+    if (error) {
+      response.status(500);
+      response.json({
+        ok: false,
+        results: error.message,
+      });
+    } else {
+      response.json({
+        ok: true,
+      });
+    }
+  });
+});
+
+service.patch('/nicks/:id/approve', (request, response) => {
   const id = request.params.id;
   parameters = [
     1,
@@ -192,6 +174,24 @@ service.post('/nicks/:id/approve', (request, response) => {
   ]
   const query = 'UPDATE nickname SET reviewed = ? WHERE id = ?';
   connection.query(query, parameters, (error, result) => {
+    if (error) {
+      response.status(500);
+      response.json({
+        ok: false,
+        results: error.message,
+      });
+    } else {
+      response.json({
+        ok: true,
+      });
+    }
+  });
+});
+
+service.delete('/nicks/:id', (request, response) => {
+  const id = request.params.id;
+  const query = "DELETE FROM nickname WHERE id = '" + id + "'";
+  connection.query(query, (error, result) => {
     if (error) {
       response.status(500);
       response.json({
