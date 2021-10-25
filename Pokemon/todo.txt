@@ -1,9 +1,0 @@
-GET facts for a specific Pokemon
-POST facts for a specific Pokemon
-POST a new like for a specific fact
-POST a report for a specific fact
-POST approval for a fact
-remove report for a fact
-get all facts
-POST a new fact
-delete a fact
