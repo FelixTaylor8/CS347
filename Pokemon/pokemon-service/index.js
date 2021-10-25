@@ -60,14 +60,6 @@ connection.query("INSERT INTO mon VALUES (97, 'hypno', 0)");
 connection.query("INSERT INTO mon VALUES (98, 'krabby', 0)");
 connection.query("INSERT INTO mon VALUES (99, 'kingler', 0)");
 
-
-
-
-
-
-
-
-
 /**
  * This is so post requests are easier to make
  * without checking if the Pokemon exists first
