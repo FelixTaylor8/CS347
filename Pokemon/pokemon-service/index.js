@@ -37,7 +37,6 @@ function findMon(name) {
   return false;
 }
 
-
 /** Mon section */
 
 function rowToMon(row) {
