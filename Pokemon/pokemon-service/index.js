@@ -17,7 +17,6 @@ connection.connect(error => {
     }
 });
 
-connection.query("INSERT INTO mon VALUES (58, 'growlithe', 0)");
 connection.query("INSERT INTO mon VALUES (59, 'arcanine', 0)");
 connection.query("INSERT INTO mon VALUES (60, 'poliwag', 0)");
 connection.query("INSERT INTO mon VALUES (61, 'poliwhirl', 0)");
