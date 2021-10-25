@@ -17,52 +17,52 @@ connection.connect(error => {
     }
 });
 
-connection.query("INSERT INTO mon (id, name, likes) VALUES (54, psyduck, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (55, golduck, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (56, mankey, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (57, primeape, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (58, growlithe, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (59, arcanine, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (60, poliwag, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (61, poliwhirl, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (62, poliwrath, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (63, abra, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (64, kadabra, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (65, alakazam, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (66, machop, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (67, machoke, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (68, machamp, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (69, bellsprout, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (70, weepinbell, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (71, victreebell, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (72, tentacool, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (73, tentacruel, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (74, geodude, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (75, graveler, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (76, golem, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (77, ponyta, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (78, rapidash, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (79, slowpoke, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (80, slowbro, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (81, magnemite, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (82, magneton, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (83, farfetch'd, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (84, doduo, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (85, dodrio, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (86, seel, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (87, dewgong, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (88, grimer, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (89, muk, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (90, shellder, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (91, cloyster, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (92, gastly, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (93, haunter, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (94, gengar, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (95, onix, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (96, drowzee, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (97, hypno, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (98, krabby, 0)");
-connection.query("INSERT INTO mon (id, name, likes) VALUES (99, kingler, 0)");
+connection.query("INSERT INTO mon VALUES (54, psyduck, 0)");
+connection.query("INSERT INTO mon VALUES (55, golduck, 0)");
+connection.query("INSERT INTO mon VALUES (56, mankey, 0)");
+connection.query("INSERT INTO mon VALUES (57, primeape, 0)");
+connection.query("INSERT INTO mon VALUES (58, growlithe, 0)");
+connection.query("INSERT INTO mon VALUES (59, arcanine, 0)");
+connection.query("INSERT INTO mon VALUES (60, poliwag, 0)");
+connection.query("INSERT INTO mon VALUES (61, poliwhirl, 0)");
+connection.query("INSERT INTO mon VALUES (62, poliwrath, 0)");
+connection.query("INSERT INTO mon VALUES (63, abra, 0)");
+connection.query("INSERT INTO mon VALUES (64, kadabra, 0)");
+connection.query("INSERT INTO mon VALUES (65, alakazam, 0)");
+connection.query("INSERT INTO mon VALUES (66, machop, 0)");
+connection.query("INSERT INTO mon VALUES (67, machoke, 0)");
+connection.query("INSERT INTO mon VALUES (68, machamp, 0)");
+connection.query("INSERT INTO mon VALUES (69, bellsprout, 0)");
+connection.query("INSERT INTO mon VALUES (70, weepinbell, 0)");
+connection.query("INSERT INTO mon VALUES (71, victreebell, 0)");
+connection.query("INSERT INTO mon VALUES (72, tentacool, 0)");
+connection.query("INSERT INTO mon VALUES (73, tentacruel, 0)");
+connection.query("INSERT INTO mon VALUES (74, geodude, 0)");
+connection.query("INSERT INTO mon VALUES (75, graveler, 0)");
+connection.query("INSERT INTO mon VALUES (76, golem, 0)");
+connection.query("INSERT INTO mon VALUES (77, ponyta, 0)");
+connection.query("INSERT INTO mon VALUES (78, rapidash, 0)");
+connection.query("INSERT INTO mon VALUES (79, slowpoke, 0)");
+connection.query("INSERT INTO mon VALUES (80, slowbro, 0)");
+connection.query("INSERT INTO mon VALUES (81, magnemite, 0)");
+connection.query("INSERT INTO mon VALUES (82, magneton, 0)");
+connection.query("INSERT INTO mon VALUES (83, farfetch'd, 0)");
+connection.query("INSERT INTO mon VALUES (84, doduo, 0)");
+connection.query("INSERT INTO mon VALUES (85, dodrio, 0)");
+connection.query("INSERT INTO mon VALUES (86, seel, 0)");
+connection.query("INSERT INTO mon VALUES (87, dewgong, 0)");
+connection.query("INSERT INTO mon VALUES (88, grimer, 0)");
+connection.query("INSERT INTO mon VALUES (89, muk, 0)");
+connection.query("INSERT INTO mon VALUES (90, shellder, 0)");
+connection.query("INSERT INTO mon VALUES (91, cloyster, 0)");
+connection.query("INSERT INTO mon VALUES (92, gastly, 0)");
+connection.query("INSERT INTO mon VALUES (93, haunter, 0)");
+connection.query("INSERT INTO mon VALUES (94, gengar, 0)");
+connection.query("INSERT INTO mon VALUES (95, onix, 0)");
+connection.query("INSERT INTO mon VALUES (96, drowzee, 0)");
+connection.query("INSERT INTO mon VALUES (97, hypno, 0)");
+connection.query("INSERT INTO mon VALUES (98, krabby, 0)");
+connection.query("INSERT INTO mon VALUES (99, kingler, 0)");
 
 
 
@@ -279,7 +279,7 @@ service.post('/nick', (request, response) => {
       0,
       0
     ];
-    var query = "INSERT INTO nickname(id, nick, mon, reviewed, reported, likes) VALUES (?, ?, ?, ?, ?, ?)";
+    var query = "INSERT INTO nickname VALUES (?, ?, ?, ?, ?, ?)";
     connection.query(query, parameters, (error, result) => {
       if (error) {
         response.status(500);
@@ -529,7 +529,7 @@ service.post('/fact', (request, response) => {
       0,
       0
     ];
-    var query = "INSERT INTO funfact(id, fact, mon, reviewed, reported, likes) VALUES (?, ?, ?, ?, ?, ?)";
+    var query = "INSERT INTO funfact VALUES (?, ?, ?, ?, ?, ?)";
     connection.query(query, parameters, (error, result) => {
       if (error) {
         response.status(500);
