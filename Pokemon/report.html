@@ -21,7 +21,7 @@ Nicknames:
     <li>service.get('/nick' - all nicknames</li>
     <li>service.get('/nick/:mon' - specific pokemon's nicknames</li>
     <li>service.get('/nick/:id' - specific nickname</li>
-    <li>service.post('/nick' - post a nickname (requires body with elements "id", "nick," and "mon")</li>
+    <li>service.post('/nick' - post a nickname (requires body with elements "id", (doesn't auto-increment) "nick," and "mon")</li>
     <li>service.patch('/nick/:id/like' - like a specific nickname</li>
     <li>service.patch('/nick/:id/report' - report a specific nickname</li>
     <li>service.patch('/nick/:id/removereport' - remove report from nickname</li>
@@ -33,7 +33,7 @@ Facts:
     <li>service.get('/fact' - all facts</li>
     <li>service.get('/fact/:mon' - specific pokemon's facts</li>
     <li>service.get('/fact/:id' - specific fact</li>
-    <li>service.post('/fact' - post a fact (requires body with elements "id", "fact," and "mon")</li>
+    <li>service.post('/fact' - post a fact (requires body with elements "id", (doesn't auto-increment) "fact," and "mon")</li>
     <li>service.patch('/fact/:id/like' - like a specific fact</li>
     <li>service.patch('/fact/:id/report' - report a specific fact</li>
     <li>service.patch('/fact/:id/removereport' - remove report from fact</li>
@@ -42,17 +42,13 @@ Facts:
 </ol>
 6. service functions use response.json
 7. Able to get pokemon/nicknames/facts, post new nicknames/facts, report/approve and like nicknames/facts, and delete nicknames/facts
-8.
-The database must only be directly accessible from within your droplet, and not from outside. Use ufw to block all ports but the ones you need for SSH and your allowed web servers.
-9.
+8. Database accessible in the droplet. ufw blocks ports.
+9. Nginx makes server accessible through :8443
 You will create an Nginx server that allows global, encrypted access to your web service.
-10.
-The web service must support cross-origin resource sharing using custom middleware and an options wildcard endpoint.
-11.
-Your web service must be started using a process manager like pm2 so that it stays running.
-12.
-Your service must be stored in a Git repository that you have shared with your instructor. On GitHub, GitLab, and Bitbucket, share with the user twodee.
-13.
+10. Allowed cross-origin resource sharing.
+11. Used pm2
+12. Stored and shared
+13. 
 Your database’s creation and schema scripts must be included in your repository. Passwords must not be included.
 14. Actively pushed during each work session in order to test code.
 15. 
