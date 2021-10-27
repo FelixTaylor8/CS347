@@ -28,7 +28,9 @@ service.options('*', (request, response) => {
 });
 
 service.get('/report.html', (request, response) => {
-  response.sendFile('report.html');
+  var path = require('path');
+  const report = path.join(__dirname, 'report.html')
+  response.sendFile(report);
 });
 
 /**
