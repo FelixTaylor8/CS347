@@ -28,7 +28,7 @@ service.options('*', (request, response) => {
 });
 
 service.get('/report.html', (request, response) => {
-  response.sendFile('/home/apir/CS347/Pokemon/pokemon-services/report.html');
+  response.sendFile('report.html');
 });
 
 /**
