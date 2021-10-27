@@ -1,15 +1,15 @@
-1. This service allows users to input nickname ideas and fun facts about specific Pokemon (works with the first 99 Pokemon).
-2. Used MySql to store valid Pokemon, nicknames, and fun facts.
-3. Used 
+<ol>
+<li>1. This service allows users to input nickname ideas and fun facts about specific Pokemon (works with the first 99 Pokemon).</li>
+<li>2. Used MySql to store valid Pokemon, nicknames, and fun facts.</li>
+<li>3. Used 
 <code><pre>
 const express = require('express');
 const service = express();
 service.use(express.json());
 </pre></code>
-and service.get/post/patch/delete interacts with the pokemon database
-4. 
-Your web service will be available via https://project2.YOUR-DOMAIN-NAME:8443/.
-5. Names used:
+and service.get/post/patch/delete interacts with the pokemon database</li>
+<li>>4. Works at https://project2.apir.me:8443</li>
+<li>5. Names used:
 Pokemon:
 <ol>
     <li>service.get('/pokemon' - all pokemon</li>
@@ -39,17 +39,14 @@ Facts:
     <li>service.patch('/fact/:id/removereport' - remove report from fact</li>
     <li>service.patch('/fact/:id/approve' - approve a fact</li>
     <li>service.delete('/fact/:id' - delete a fact</li>
-</ol>
-6. service functions use response.json
-7. Able to get pokemon/nicknames/facts, post new nicknames/facts, report/approve and like nicknames/facts, and delete nicknames/facts
-8. Database accessible in the droplet. ufw blocks ports.
-9. Nginx makes server accessible through :8443
-You will create an Nginx server that allows global, encrypted access to your web service.
-10. Allowed cross-origin resource sharing.
-11. Used pm2
-12. Stored and shared
-13. 
-Your database’s creation and schema scripts must be included in your repository. Passwords must not be included.
-14. Actively pushed during each work session in order to test code.
-15. 
-Have your service respond to https://project2.YOUR-DOMAIN-NAME/report.html by sending back an HTML page with brief report containing an itemized breakdown of how you believe you have met the expectations listed above.
+</ol></li>
+<li>6. service functions use response.json</li>
+<li>7. Able to get pokemon/nicknames/facts, post new nicknames/facts, report/approve and like nicknames/facts, and delete nicknames/facts</li>
+<li>8. Database accessible in the droplet. ufw blocks other ports</li>.
+<li>9. Nginx makes server accessible through :8443</li>
+<li>10. Allowed cross-origin resource sharing.</li>
+<li>11. Used pm2</li>
+<li>12. Stored and shared</li>
+<li>13. Creation schema included. Git ignores the credentials.</li>
+<li>14. Actively pushed during each work session in order to test code.</li>
+<li>15. Report here</li>

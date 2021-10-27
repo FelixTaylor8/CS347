@@ -21,3 +21,11 @@ CREATE TABLE funfact(
     reported INT,
     likes INT
 );
+
+INSERT INTO mon VALUES (1, 'bulbasaur', 0);
+INSERT INTO mon VALUES (2, 'ivysaur', 0);
+INSERT INTO mon VALUES (3, 'venusaur', 0);
+INSERT INTO mon VALUES (4, 'charmander', 0);
+INSERT INTO mon VALUES (5, 'charmeleon', 0);
+INSERT INTO mon VALUES (6, 'charizard', 0);
+/* etc to Pokedex entry 99 (Kingler) */
