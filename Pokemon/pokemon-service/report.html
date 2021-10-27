@@ -10,12 +10,12 @@ service.use(express.json());
     </code> and service.get/post/patch/delete interacts with the pokemon database </li>
 	<li>Works at https://project2.apir.me:8443</li>
 	<li> Names used: Pokemon:
-		<ol>
+		<ul>
 			<li>service.get('/pokemon' - all pokemon</li>
 			<li>service.get('/pokemon/:mon' - specific pokemon</li>
 			<li>service.patch('/pokemon/:monId/like' - increments likes of specific pokemon</li>
-		</ol> Nicknames:
-		<ol>
+		</ul> Nicknames:
+		<ul>
 			<li>service.get('/nick' - all nicknames</li>
 			<li>service.get('/nick/:mon' - specific pokemon's nicknames</li>
 			<li>service.get('/nick/:id' - specific nickname</li>
@@ -25,8 +25,8 @@ service.use(express.json());
 			<li>service.patch('/nick/:id/removereport' - remove report from nickname</li>
 			<li>service.patch('/nick/:id/approve' - approve a nickname</li>
 			<li>service.delete('/nick/:id' - delete a nickname</li>
-		</ol> Facts:
-		<ol>
+		</ul> Facts:
+		<ul>
 			<li>service.get('/fact' - all facts</li>
 			<li>service.get('/fact/:mon' - specific pokemon's facts</li>
 			<li>service.get('/fact/:id' - specific fact</li>
@@ -36,7 +36,7 @@ service.use(express.json());
 			<li>service.patch('/fact/:id/removereport' - remove report from fact</li>
 			<li>service.patch('/fact/:id/approve' - approve a fact</li>
 			<li>service.delete('/fact/:id' - delete a fact</li>
-		</ol>
+		</ul>
 	</li>
 	<li>service functions use response.json</li>
 	<li>Able to get pokemon/nicknames/facts, post new nicknames/facts, report/approve and like nicknames/facts, and delete nicknames/facts</li>
