@@ -453,7 +453,7 @@ service.get('/fact/:mon', (request, response) => {
 // Get a specific fact
 service.get('/fact/:id', (request, response) => {
     const id = request.params.mon;
-    const query = "SELECT * FROM fact WHERE mon='" + id + "'";
+    const query = "SELECT * FROM funfact WHERE mon='" + id + "'";
     connection.query(query, (error, rows) => {
         if (error) {
             response.status(500);
