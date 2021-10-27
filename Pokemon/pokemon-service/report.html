@@ -1,52 +1,51 @@
 <ol>
-<li>1. This service allows users to input nickname ideas and fun facts about specific Pokemon (works with the first 99 Pokemon).</li>
-<li>2. Used MySql to store valid Pokemon, nicknames, and fun facts.</li>
-<li>3. Used 
-<code><pre>
+	<li>This service allows users to input nickname ideas and fun facts about specific Pokemon (works with the first 99 Pokemon).</li>
+	<li>Used MySql to store valid Pokemon, nicknames, and fun facts.</li>
+	<li> Used <code>
+      <pre>
 const express = require('express');
 const service = express();
 service.use(express.json());
-</pre></code>
-and service.get/post/patch/delete interacts with the pokemon database</li>
-<li>>4. Works at https://project2.apir.me:8443</li>
-<li>5. Names used:
-Pokemon:
-<ol>
-    <li>service.get('/pokemon' - all pokemon</li>
-    <li>service.get('/pokemon/:mon' - specific pokemon</li>
-    <li>service.patch('/pokemon/:monId/like' - increments likes of specific pokemon</li>
+</pre>
+    </code> and service.get/post/patch/delete interacts with the pokemon database </li>
+	<li>Works at https://project2.apir.me:8443</li>
+	<li> Names used: Pokemon:
+		<ol>
+			<li>service.get('/pokemon' - all pokemon</li>
+			<li>service.get('/pokemon/:mon' - specific pokemon</li>
+			<li>service.patch('/pokemon/:monId/like' - increments likes of specific pokemon</li>
+		</ol> Nicknames:
+		<ol>
+			<li>service.get('/nick' - all nicknames</li>
+			<li>service.get('/nick/:mon' - specific pokemon's nicknames</li>
+			<li>service.get('/nick/:id' - specific nickname</li>
+			<li>service.post('/nick' - post a nickname (requires body with elements "id", (doesn't auto-increment) "nick," and "mon")</li>
+			<li>service.patch('/nick/:id/like' - like a specific nickname</li>
+			<li>service.patch('/nick/:id/report' - report a specific nickname</li>
+			<li>service.patch('/nick/:id/removereport' - remove report from nickname</li>
+			<li>service.patch('/nick/:id/approve' - approve a nickname</li>
+			<li>service.delete('/nick/:id' - delete a nickname</li>
+		</ol> Facts:
+		<ol>
+			<li>service.get('/fact' - all facts</li>
+			<li>service.get('/fact/:mon' - specific pokemon's facts</li>
+			<li>service.get('/fact/:id' - specific fact</li>
+			<li>service.post('/fact' - post a fact (requires body with elements "id", (doesn't auto-increment) "fact," and "mon")</li>
+			<li>service.patch('/fact/:id/like' - like a specific fact</li>
+			<li>service.patch('/fact/:id/report' - report a specific fact</li>
+			<li>service.patch('/fact/:id/removereport' - remove report from fact</li>
+			<li>service.patch('/fact/:id/approve' - approve a fact</li>
+			<li>service.delete('/fact/:id' - delete a fact</li>
+		</ol>
+	</li>
+	<li>service functions use response.json</li>
+	<li>Able to get pokemon/nicknames/facts, post new nicknames/facts, report/approve and like nicknames/facts, and delete nicknames/facts</li>
+	<li>Database accessible in the droplet. ufw blocks other ports</li> .
+	<li>Nginx makes server accessible through :8443</li>
+	<li>Allowed cross-origin resource sharing.</li>
+	<li>Used pm2</li>
+	<li>Stored and shared</li>
+	<li>Creation schema included. Git ignores the credentials.</li>
+	<li>Actively pushed during each work session in order to test code.</li>
+	<li>Report here</li>
 </ol>
-Nicknames:
-<ol>
-    <li>service.get('/nick' - all nicknames</li>
-    <li>service.get('/nick/:mon' - specific pokemon's nicknames</li>
-    <li>service.get('/nick/:id' - specific nickname</li>
-    <li>service.post('/nick' - post a nickname (requires body with elements "id", (doesn't auto-increment) "nick," and "mon")</li>
-    <li>service.patch('/nick/:id/like' - like a specific nickname</li>
-    <li>service.patch('/nick/:id/report' - report a specific nickname</li>
-    <li>service.patch('/nick/:id/removereport' - remove report from nickname</li>
-    <li>service.patch('/nick/:id/approve' - approve a nickname</li>
-    <li>service.delete('/nick/:id' - delete a nickname</li>
-</ol>
-Facts:
-<ol>
-    <li>service.get('/fact' - all facts</li>
-    <li>service.get('/fact/:mon' - specific pokemon's facts</li>
-    <li>service.get('/fact/:id' - specific fact</li>
-    <li>service.post('/fact' - post a fact (requires body with elements "id", (doesn't auto-increment) "fact," and "mon")</li>
-    <li>service.patch('/fact/:id/like' - like a specific fact</li>
-    <li>service.patch('/fact/:id/report' - report a specific fact</li>
-    <li>service.patch('/fact/:id/removereport' - remove report from fact</li>
-    <li>service.patch('/fact/:id/approve' - approve a fact</li>
-    <li>service.delete('/fact/:id' - delete a fact</li>
-</ol></li>
-<li>6. service functions use response.json</li>
-<li>7. Able to get pokemon/nicknames/facts, post new nicknames/facts, report/approve and like nicknames/facts, and delete nicknames/facts</li>
-<li>8. Database accessible in the droplet. ufw blocks other ports</li>.
-<li>9. Nginx makes server accessible through :8443</li>
-<li>10. Allowed cross-origin resource sharing.</li>
-<li>11. Used pm2</li>
-<li>12. Stored and shared</li>
-<li>13. Creation schema included. Git ignores the credentials.</li>
-<li>14. Actively pushed during each work session in order to test code.</li>
-<li>15. Report here</li>
