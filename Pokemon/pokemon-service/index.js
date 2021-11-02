@@ -201,7 +201,7 @@ service.get('/nick/:mon', (request, response) => {
 // Get a specific nickname
 service.get('/nick/id/:id', (request, response) => {
     const id = request.params.id;
-    const query = "SELECT * FROM nickname WHERE mon='" + id + "'";
+    const query = "SELECT * FROM nickname WHERE id='" + id + "'";
     connection.query(query, (error, rows) => {
         if (error) {
             response.status(500);
@@ -453,7 +453,7 @@ service.get('/fact/:mon', (request, response) => {
 // Get a specific fact
 service.get('/fact/id/:id', (request, response) => {
     const id = request.params.id;
-    const query = "SELECT * FROM funfact WHERE mon='" + id + "'";
+    const query = "SELECT * FROM funfact WHERE id='" + id + "'";
     connection.query(query, (error, rows) => {
         if (error) {
             response.status(500);
