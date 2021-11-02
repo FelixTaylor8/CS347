@@ -107,7 +107,7 @@ service.get('/pokemon/:mon', (request, response) => {
 
 // Like a pokemon
 service.patch('/pokemon/:monId/like', (request, response) => {
-    const monId = parseInt(request.params.mon);
+    const monId = parseInt(request.params.monId);
     if (monId > -1 && monId < pokemon.size) {
         pokemon[monId].likes++;
         const parameters = [
