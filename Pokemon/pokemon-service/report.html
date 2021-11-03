@@ -9,7 +9,7 @@ service.use(express.json());
 </pre>
     </code> and service.get/post/patch/delete interacts with the pokemon database </li>
 	<li>Works at https://project2.apir.me:8443</li>
-	<li> Names used: Pokemon:
+	<li>Pokemon:
 		<ul>
 			<li>service.get('/pokemon' - all pokemon</li>
 			<li>service.get('/pokemon/:mon' - specific pokemon by name</li>
@@ -30,7 +30,7 @@ service.use(express.json());
 		</ul> Facts:
 		<ul>
 			<li>service.get('/fact' - all facts</li>
-			<li>service.get('/fact/:mon' - specific pokemon's facts</li>
+			<li>service.get('/fact/:mon' - specific pokemon's facts (using pokemon's name)</li>
 			<li>service.get('/fact/id/:id' - specific fact</li>
 			<li>service.post('/fact' - post a fact (requires body with elements "id", (doesn't auto-increment) "fact," and "mon")</li>
 			<li>service.patch('/fact/:id/like' - like a specific fact</li>
