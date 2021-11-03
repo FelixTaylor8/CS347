@@ -126,38 +126,6 @@ service.get('/pokemon/id/:id', (request, response) => {
     });
 });
 
-// Like a pokemon
-/*service.patch('/pokemon/:monId/like', (request, response) => {
-    const monId = parseInt(request.params.monId);
-    if (monId > 0 && monId < pokemon.size) {
-        pokemon[monId].likes++;
-        const parameters = [
-            pokemon[monId].likes,
-            monId,
-        ];
-        const query = 'UPDATE mon SET likes = ? WHERE id = ?';
-        connection.query(query, parameters, (error, result) => {
-            if (error) {
-                response.status(500);
-                response.json({
-                    ok: false,
-                    results: error.message,
-                });
-            } else {
-                response.json({
-                    ok: true,
-                });
-            }
-        });
-    } else {
-        response.status(400);
-        response.json({
-            ok: false,
-            results: 'Pokemon not found.',
-        });
-    }
-});*/
-
 // Like a pokemon by name
 service.patch('/pokemon/:name/like', (request, response) => {
     const mon = request.params.name;
@@ -279,35 +247,6 @@ service.get('/nick/:mon', (request, response) => {
                 response.json({
                     ok: false,
                     results: `No nicknames found for ${mon}`
-                });
-            } else {
-                response.json({
-                    ok: true,
-                    results: rows.map(rowToNick)
-                });
-            }
-        }
-    });
-});
-
-// Get nicknames for a specific pokemon by ID
-service.get('/nick/mon/:id', (request, response) => {
-    const id = request.params.id;
-    const query = "SELECT * FROM nickname WHERE id='" + id + "'";
-    connection.query(query, (error, rows) => {
-        if (error) {
-            response.status(500);
-            console.error(error);
-            response.json({
-                ok: false,
-                results: `No nicknames found for pokemon ID ${id}`,
-            })
-        } else {
-            var res = rows.map(rowToNick);
-            if (res.length == 0) {
-                response.json({
-                    ok: false,
-                    results: `No nicknames found for pokemon ID ${id}`
                 });
             } else {
                 response.json({
@@ -542,9 +481,67 @@ service.get('/fact', (request, response) => {
     });
 });
 
+// Get facts for a specific pokemon by its name
+service.get('/fact/:mon', (request, response) => {
+    const mon = request.params.mon.toLowerCase();
+    const query = "SELECT * FROM funfact WHERE mon='" + mon + "'";
+    connection.query(query, (error, rows) => {
+        if (error) {
+            response.status(500);
+            console.error(error);
+            response.json({
+                ok: false,
+                results: `No facts found for ${mon}`,
+            })
+        } else {
+            var res = rows.map(rowToFact);
+            if (res.length == 0) {
+                response.json({
+                    ok: false,
+                    results: `No facts found for ${mon}`
+                });
+            } else {
+                response.json({
+                    ok: true,
+                    results: rows.map(rowToFact)
+                });
+            }
+        }
+    });
+});
+
 // Get facts for a specific pokemon
 service.get('/fact/:mon', (request, response) => {
     const mon = request.params.mon.toLowerCase();
+    const query = "SELECT * FROM funfact WHERE mon='" + mon + "'";
+    connection.query(query, (error, rows) => {
+        if (error) {
+            response.status(500);
+            console.error(error);
+            response.json({
+                ok: false,
+                results: `No facts found for ${mon}`,
+            })
+        } else {
+            var res = rows.map(rowToFact);
+            if (res.length == 0) {
+                response.json({
+                    ok: false,
+                    results: `No facts found for ${mon}`
+                });
+            } else {
+                response.json({
+                    ok: true,
+                    results: rows.map(rowToFact)
+                });
+            }
+        }
+    });
+});
+
+// Get facts for a specific pokemon
+service.get('/fact/mon/:id', (request, response) => {
+    const id = request.params.id;
     const query = "SELECT * FROM funfact WHERE mon='" + mon + "'";
     connection.query(query, (error, rows) => {
         if (error) {
