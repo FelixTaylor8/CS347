@@ -127,9 +127,9 @@ service.get('/pokemon/id/:id', (request, response) => {
 });
 
 // Like a pokemon
-service.patch('/pokemon/:monId/like', (request, response) => {
+/*service.patch('/pokemon/:monId/like', (request, response) => {
     const monId = parseInt(request.params.monId);
-    if (monId > -1 && monId < pokemon.size) {
+    if (monId > 0 && monId < pokemon.size) {
         pokemon[monId].likes++;
         const parameters = [
             pokemon[monId].likes,
@@ -156,6 +156,77 @@ service.patch('/pokemon/:monId/like', (request, response) => {
             results: 'Pokemon not found.',
         });
     }
+});*/
+
+// Like a pokemon by name
+service.patch('/pokemon/:name/like', (request, response) => {
+    const mon = request.params.name;
+    const query = "SELECT likes FROM mon WHERE name='" + mon + "'";
+    connection.query(query, (error, packet) => {
+        if (error || packet == null || packet[0] == null) {
+            response.status(500);
+            console.error(error);
+            response.json({
+                ok: false,
+                results: `No pokemon associated with ${mon}`,
+            })
+        } else {
+            var newInt = parseInt(packet[0].likes) + 1;
+            const parameters = [
+                newInt,
+                id
+            ];
+            const newQuery = "UPDATE mon SET likes = ? WHERE name = ?";
+            connection.query(newQuery, parameters, (error, result) => {
+                if (error) {
+                    response.status(500);
+                    response.json({
+                        ok: false,
+                        results: error.message,
+                    });
+                } else {
+                    response.json({
+                        ok: true
+                    });
+                }
+            });
+        }
+    });
+});
+
+service.patch('/pokemon/id/:id/like', (request, response) => {
+    const id = request.params.id;
+    const query = "SELECT likes FROM mon WHERE id='" + id + "'";
+    connection.query(query, (error, packet) => {
+        if (error || packet == null || packet[0] == null) {
+            response.status(500);
+            console.error(error);
+            response.json({
+                ok: false,
+                results: `No pokemon associated with ${id}`,
+            })
+        } else {
+            var newInt = parseInt(packet[0].likes) + 1;
+            const parameters = [
+                newInt,
+                id
+            ];
+            const newQuery = "UPDATE mon SET likes = ? WHERE id = ?";
+            connection.query(newQuery, parameters, (error, result) => {
+                if (error) {
+                    response.status(500);
+                    response.json({
+                        ok: false,
+                        results: error.message,
+                    });
+                } else {
+                    response.json({
+                        ok: true
+                    });
+                }
+            });
+        }
+    });
 });
 
 /** Nickname section */
