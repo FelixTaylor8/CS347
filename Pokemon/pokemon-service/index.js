@@ -105,6 +105,27 @@ service.get('/pokemon/:mon', (request, response) => {
     });
 });
 
+// Get a specific pokemon using its id
+service.get('/pokemon/id/:id', (request, response) => {
+    const id = request.params.id;
+    const query = "SELECT * FROM mon WHERE id = '" + id + "'";
+    connection.query(query, (error, rows) => {
+        if (error) {
+            response.status(500);
+            console.error(error);
+            response.json({
+                ok: false,
+                results: "Error",
+            })
+        } else {
+            response.json({
+                ok: true,
+                results: rows.map(rowToMon)
+            });
+        }
+    });
+});
+
 // Like a pokemon
 service.patch('/pokemon/:monId/like', (request, response) => {
     const monId = parseInt(request.params.monId);
