@@ -94,7 +94,7 @@ service.get('/pokemon/:mon', (request, response) => {
             console.error(error);
             response.json({
                 ok: false,
-                results: "Error",
+                results: `No pokemon associated with the name ${mon}`,
             })
         } else {
             response.json({
@@ -115,7 +115,7 @@ service.get('/pokemon/id/:id', (request, response) => {
             console.error(error);
             response.json({
                 ok: false,
-                results: "Error",
+                results: `No pokemon associated with the ID ${id}`,
             })
         } else {
             response.json({
@@ -168,13 +168,13 @@ service.patch('/pokemon/:name/like', (request, response) => {
             console.error(error);
             response.json({
                 ok: false,
-                results: `No pokemon associated with ${mon}`,
+                results: `No pokemon associated with the name ${mon}`,
             })
         } else {
             var newInt = parseInt(packet[0].likes) + 1;
             const parameters = [
                 newInt,
-                id
+                mon
             ];
             const newQuery = "UPDATE mon SET likes = ? WHERE name = ?";
             connection.query(newQuery, parameters, (error, result) => {
@@ -203,7 +203,7 @@ service.patch('/pokemon/id/:id/like', (request, response) => {
             console.error(error);
             response.json({
                 ok: false,
-                results: `No pokemon associated with ${id}`,
+                results: `No pokemon associated with the ID ${id}`,
             })
         } else {
             var newInt = parseInt(packet[0].likes) + 1;
@@ -279,6 +279,35 @@ service.get('/nick/:mon', (request, response) => {
                 response.json({
                     ok: false,
                     results: `No nicknames found for ${mon}`
+                });
+            } else {
+                response.json({
+                    ok: true,
+                    results: rows.map(rowToNick)
+                });
+            }
+        }
+    });
+});
+
+// Get nicknames for a specific pokemon by ID
+service.get('/nick/mon/:id', (request, response) => {
+    const id = request.params.id;
+    const query = "SELECT * FROM nickname WHERE id='" + id + "'";
+    connection.query(query, (error, rows) => {
+        if (error) {
+            response.status(500);
+            console.error(error);
+            response.json({
+                ok: false,
+                results: `No nicknames found for pokemon ID ${id}`,
+            })
+        } else {
+            var res = rows.map(rowToNick);
+            if (res.length == 0) {
+                response.json({
+                    ok: false,
+                    results: `No nicknames found for pokemon ID ${id}`
                 });
             } else {
                 response.json({
