@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>APIR Blog</title>
+  </head>
+  <body>
+    <header id="showcase">
+      <h1>11/04/21</h1>
+      <h2>Felix Taylor</h2>
+      <a href="#a" class="button">Read</a>
+    </header>
+    <section id="a">
+      <p>It was unclear to me what the purpose of using React was over just plain Javascript, so I found <a href="https://www.framer.com/blog/posts/react-vs-vanilla-js/" target="_blank">an article</a>that explained it:</p>
+      <ul>
+        <li>Plain javascript means the HTML will be pre-set on the server, but with react, it is created on the browser</li>
+        <li>React keeps all the HTML information in one place, instead of splitting it between the HTML and JS files. This makes updating things easier.</li>
+        <li>Avoids manually extracting things like form input from DOM, saves in JS variables directly</li>
+        <li>Avoids having to set up listeners and append new elements to existing ones</li>
+      </ul>
+      <p>React cuts down on the amount of code one has to write, as shown by the following example from the article:</p>
+      <pre><code>
+        addButton.addEventListener("click", function() {
+          const input = document.getElementById("item-input");
+          const list = document.getElementById("grocery-list");
+         
+          const listNode = document.createElement("li");
+          const textNode = document.createTextNode(input.value);
+         
+          listNode.appendChild(textNode);
+          list.appendChild(listNode);
+        });
+      </code></pre>
+      <p>Translates to</p>
+      <pre><code>function addItem() { setItems([...items, itemInput]); }</code></pre>
+      <p>I also watched <a href="https://youtu.be/1wZoGFF_oi4" target="_blank">this video</a>:</p>
+      <ul>
+        <li>It is primarily a library for creating user interfaces</li>
+        <li>React focuses on the concept of splitting HTML into components</li>
+        <li>It is declarative. The HTML doesn't have to be manually changed, use states/variables to change it automatically</li>
+        <li>Used an example of Google search, where each result is its own component, and so are different tabs</li>
+        <li>"Easier to make small, incremental changes without breaking things."</li>
+      </ul>
+    </section>
+    <section id="b">
+      <a href="index.html" id="button2">Home</a>
+    </section>
+  </body>
+</html>
