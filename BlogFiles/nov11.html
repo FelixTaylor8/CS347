@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>APIR Blog</title>
+  </head>
+  <body>
+    <header id="showcase">
+      <h1>11/11/21</h1>
+      <h2>Felix Taylor</h2>
+      <a href="#a" class="button">Read</a>
+    </header>
+    <section id="a">
+        <p>I watched <a href="https://www.youtube.com/watch?v=O6P86uwfdR0" target="_blank">this video</a> to get a better understanding of useState.</p>
+        <ul>
+            <li>Realized in his same code he had empty angle brackets as the parent element - didn't know you could do that!</li>
+            <li>React hooks can't be called conditionally, they have to be called in the same order every time</li>
+            <li>They can't be nested in functions or loops either</li>
+            <li>useState returns two values, the first is the state, and the second should be the function that updates the state:</li>
+            <li><code><pre>const [count, setCount] = useState()</pre></code></li>
+            <li>Functions that call setCount will update count</li>
+            <li>If you want to update count based on its previous value, pass it as a parameter before updating it</li>
+            <li>Whenever count is </li>
+            <li>useState can also take a function, which runs once.</li>
+            <li>When one part of a state is updated, the entire thing is overwritten. Spreading it avoids this issue.</li>
+            <li>Using multiple useState hooks makes it easier to manage</li>
+        </ul>
+    </section>
+    <section id="b">
+      <a href="index.html" id="button2">Home</a>
+    </section>
+  </body>
+</html>
