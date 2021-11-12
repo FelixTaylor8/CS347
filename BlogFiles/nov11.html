@@ -22,6 +22,11 @@
             <li><code><pre>const [count, setCount] = useState()</pre></code></li>
             <li>Functions that call setCount will update count</li>
             <li>If you want to update count based on its previous value, pass it as a parameter before updating it</li>
+            <li><pre><code>function decrement() {
+                setCount(prevCount => prevCount - 1);
+            }
+            </code></pre></li>
+            <li>Above will decrement count by 2. Not very intuitive.</li>
             <li>Whenever count is </li>
             <li>useState can also take a function, which runs once.</li>
             <li>When one part of a state is updated, the entire thing is overwritten. Spreading it avoids this issue.</li>
