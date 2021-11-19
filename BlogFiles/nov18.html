@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>APIR Blog</title>
+  </head>
+  <body>
+    <header id="showcase">
+      <h1>11/18/21</h1>
+      <h2>Felix Taylor</h2>
+      <a href="#a" class="button">Read</a>
+    </header>
+    <section id="a">
+        <p>I watched <a href="https://youtu.be/0ZJgIjIuY7U" target="_blank">this video</a> about react effects:</p>
+        <ul>
+            <li>useEffect creates a side effect whenever something happens, such as when a specific resource changes</li>
+            <li>Can pass an array into useEffect that will indicate when it should run</li>
+            <pre><code>useEffect(() => { ...
+            }, [resource])
+            </code></pre>
+            <li>This is useful for fetching from an API whenever a resource changes, then the json can be added as a state, which can be coded into the HTML</li>
+            <li>Use a return statement to call a function that removes event listeners added by useeffect, so they aren't being added multiple times</li>
+            <li><a href="https://youtu.be/wU57kvYOxT4" target="_blank">This video</a> explains that useEffect is asynchronous, but useLayoutEffect is synchronous, so it should be used when things are dependent on positions of the page, but may cause errors, so useEffect is preferred.</li>
+        </ul>
+        <p>I watched <a href="https://www.youtube.com/watch?v=_AyFP5s69N4" target="_blank">this video</a> about callback. useCallBack prevents a function from running unless a certain variable has changed, similar to useEffect. Not entirely sure why useEffect wouldn't just be used instead. </p>
+
+    </section>
+    <section id="b">
+      <a href="index.html" id="button2">Home</a>
+    </section>
+  </body>
+</html>
