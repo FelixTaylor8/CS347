@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>APIR Blog</title>
+</head>
+
+<body>
+    <header id="showcase">
+        <h1>12/02/21</h1>
+        <h2>Felix Taylor</h2>
+        <a href="#a" class="button">Read</a>
+    </header>
+    <section id="a">
+        <p>I was having some issues that I thought useLayoutEffect might solve, so I looked at <a
+                href="https://daveceddia.com/useeffect-vs-uselayouteffect/" target="_blank">an article</a>that explained
+            it:</p>
+        <ul>
+            <li>useEffect and useLayoutEffect function almost identically, and their format is identical</li>
+            <li>This was an example from the article:</li>
+            <code><pre>useLayoutEffect(() => {
+                // do side effects
+                return () => /* cleanup */
+              }, [dependency, array]);</pre></code>
+            <li>useEffect runs after components are rendered and the screen is updated</li>
+            <li>useLayoutEffect runs after components are rendered but before the screen is updated</li>
+            <li>useEffect is preferred most of the time, as most changes don't need to happen immediately</li>
+            <li>useLayoutEffect should be used when the page flickers - that's the issue I was getting</li>
+            <li>useLayoutEffect might cause performance issues</li>
+        </ul>
+        <p>Changing to useLayoutEffect didn't actually solve the flickering problem I was getting, so I guess the author
+            lied.</p>
+        <p><a href="https://kentcdodds.com/blog/useeffect-vs-uselayouteffect" target="_blank">This article</a> also said
+            only to use useLayoutEffect to prevent flicker. So, I don't understand why it didn't fix it for me :[</p>
+        <p>It mentioned refs, so I looked at <a href="https://www.youtube.com/watch?v=t2ypzz6gJm0" target="_blank">a
+                video</a> about it</p>
+        <ul>
+            <li>Refs are similar to states because they persist between renders, but they won't reupdate the components when they're changed</li>
+            <li>useRef returns an object with a single property of "current"</li>
+            <pre><code>
+                useEffect(() => {
+                    renderCount.current = renderCount.current + renderCount.current + 1;
+                })
+            </code></pre>
+            <li>This might be a way to deal with the flicker problem, though the flicker occurred when navigating between pages.</li>
+            <li>Refs can also be used to refer to HTML elements</li>
+        </ul>
+
+    </section>
+    <section id="b">
+        <a href="index.html" id="button2">Home</a>
+    </section>
+</body>
+
+</html>
